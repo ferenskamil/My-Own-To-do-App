@@ -1,0 +1,75 @@
+@use '../utilities/' as *;
+
+.sidebar {
+	position: absolute;
+	top: 0;
+	left: -220px;
+	bottom: 0;
+	height: 100vh;
+	width: 220px;
+	color: $white;
+	background-color: $main-blue;
+	transition: 1s;
+	overflow: hidden;
+	z-index: 5;
+
+	&--short {
+		left: 0;
+	}
+
+	&__title {
+		display: flex;
+		padding: 1em;
+		height: 60px;
+		align-items: center;
+		font-size: 2rem;
+
+		&-logo {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-right: 0.5em;
+
+			i {
+				font-size: 3rem;
+			}
+		}
+
+		&-name {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-weight: 700;
+		}
+	}
+
+	&__option {
+		display: flex;
+		padding: 0 1em;
+		transition: color 0.3s, background-color 0.3s;
+		cursor: pointer;
+		font-size: 1.6rem;
+
+		&:hover {
+			color: $main-blue;
+			background-color: $white;
+		}
+
+		&-icon {
+			display: flex;
+			justify-content: start;
+			padding: 1em;
+
+			i {
+				text-align: center;
+				font-size: 2rem;
+			}
+		}
+
+		&-name {
+			display: flex;
+			justify-content: start;
+			align-items: center;
+		}
+	}
+}

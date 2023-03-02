@@ -1,14 +1,15 @@
 const sidebar = document.querySelector('.sidebar');
-// const sidebarTitleName = document.querySelector('.sidebar__title-name');
 const sidebarDescriptions = document.querySelectorAll('.sidebar__description');
+const sidebarShadow = document.querySelector('.sidebar__shadow');
 const nav = document.querySelector('.nav');
 const app = document.querySelector('.app');
+const burgerBtn = document.querySelector('.nav__mobile-burger-btn');
 
 const openSideBar = () => {
 	sidebar.classList.remove('sidebar--short');
 	nav.classList.remove('nav--wide');
 	app.classList.remove('app--wide');
-	
+
 	setTimeout(() => {
 		sidebarDescriptions.forEach((el) => {
 			el.classList.remove('sidebar__description--hide');
@@ -34,3 +35,4 @@ const toggleSidebar = () => {
 };
 
 sidebar.addEventListener('click', toggleSidebar);
+burgerBtn.addEventListener('click', toggleSidebar);

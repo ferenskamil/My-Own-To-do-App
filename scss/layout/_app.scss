@@ -1,0 +1,8 @@
+@use '../utilities/' as *;
+
+.app {
+	margin-top: 60px;
+	padding: 1em;
+	background-color: $light-grey;
+	width: 100%;
+}
