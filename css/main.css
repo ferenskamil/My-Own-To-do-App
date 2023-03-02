@@ -35,7 +35,7 @@ textarea {
   transition: 1s;
 }
 .nav--wide {
-  width: calc(100% - 60px);
+  width: calc(100% - 80px);
 }
 .nav__avatar {
   display: flex;
@@ -62,16 +62,66 @@ textarea {
   top: 0;
   left: 0;
   bottom: 0;
-  padding: 1em;
   height: 100vh;
   width: 250px;
   color: #fff;
   background-color: #055c9d;
   font-size: 2rem;
   transition: 1s;
+  overflow: hidden;
 }
 .sidebar--short {
-  width: 60px;
+  width: 80px;
+}
+.sidebar__title {
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+.sidebar__title-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  width: 80px;
+}
+.sidebar__title-logo i {
+  font-size: 4rem;
+}
+.sidebar__title-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+.sidebar__option {
+  display: flex;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s;
+}
+.sidebar__option:hover {
+  color: #055c9d;
+  background-color: #fff;
+}
+.sidebar__option-icon {
+  display: flex;
+  justify-content: start;
+  padding: 1em;
+  width: 80px;
+}
+.sidebar__option-icon i {
+  font-size: 3rem;
+}
+.sidebar__option-name {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.sidebar__description {
+  transition: visibility 0.5s;
+}
+.sidebar__description--hide {
+  visibility: hidden;
 }
 
 .app {
@@ -83,6 +133,6 @@ textarea {
   transition: 1s;
 }
 .app--wide {
-  width: calc(100% - 60px);
+  width: calc(100% - 80px);
   margin-left: 60px;
 }/*# sourceMappingURL=main.css.map */
