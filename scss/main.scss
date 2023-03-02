@@ -1,6 +1,7 @@
 // font-family: 'Montserrat', sans-serif;
 
 @use './layout';
+@use './utilities/colors' as *;
 
 .nav {
 	position: fixed;
@@ -12,7 +13,7 @@
 	align-items: center;
 	width: calc(100% - 250px);
 	padding: 1em 2em;
-	background-color: rgb(234, 234, 234);
+	background-color: $light-grey;
 	font-size: 2.4rem;
 	font-weight: 700;
 	transition: 1s;
@@ -28,12 +29,13 @@
 		padding: 5px;
 		height: 50px;
 		width: 80px;
+		background-color: transparent;
 		border-radius: 12px;
 		border: 1px solid rgb(195, 193, 193);
 		cursor: pointer;
 
 		&:hover {
-			background-color: rgb(216, 210, 210);
+			background-color: $darker-grey;
 		}
 
 		img {
@@ -51,8 +53,8 @@
 	padding: 1em;
 	height: 100vh;
 	width: 250px;
-	color: #fff;
-	background-color: rgb(33, 52, 110);
+	color: $white;
+	background-color: #055c9d;
 	font-size: 2rem;
 	transition: 1s;
 
@@ -65,7 +67,7 @@
 	margin-top: 80px;
 	margin-left: 250px;
 	padding: 2em;
-	background-color: skyblue;
+	background-color: $light-grey;
 	width: calc(100% - 250px);
 	transition: 1s;
 
