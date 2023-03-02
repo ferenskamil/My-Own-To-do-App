@@ -1,3 +1,55 @@
 // font-family: 'Montserrat', sans-serif;
 
 @use './layout';
+
+.nav {
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: 80px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: calc(100% - 250px);
+	padding: 1em 2em;
+	background-color: rgb(234, 234, 234);
+	font-size: 2.4rem;
+	font-weight: 700;
+	transition: 1s;
+
+	&--wide {
+		width: calc(100% - 60px);
+	}
+}
+
+.sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	padding: 1em;
+	height: 100vh;
+	width: 250px;
+	color: #fff;
+	background-color: rgb(33, 52, 110);
+	font-size: 2rem;
+	transition: 1s;
+
+	&--short {
+		width: 60px;
+	}
+}
+
+.app {
+	margin-top: 80px;
+	margin-left: 250px;
+	padding: 2em;
+	background-color: skyblue;
+	width: calc(100% - 250px);
+	transition: 1s;
+
+	&--wide {
+		width: calc(100% - 60px);
+		margin-left: 60px;
+	}
+}
