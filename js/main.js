@@ -47,8 +47,18 @@ const toggleSidebar = () => {
 	}
 };
 
+const updateNoneTasksInfo = () => {
+	if (tasksList.length === 0) {
+		tasksInfo.style.display = 'block';
+	} else {
+		tasksInfo.style.display = 'none';
+	}
+};
+
 const addNewTask = () => {
 	console.log(addInput.value);
+
+	updateNoneTasksInfo()
 };
 
 sidebar.addEventListener('mousemove', openSideBar);

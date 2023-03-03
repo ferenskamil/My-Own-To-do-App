@@ -179,6 +179,7 @@ a {
   color: black;
 }
 .app__tasks-area-info {
+  display: none;
   margin-top: 1em;
   text-align: center;
   font-size: 1.6rem;
