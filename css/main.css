@@ -74,7 +74,7 @@ a {
 }
 
 .sidebar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: -220px;
   bottom: 0;
@@ -183,8 +183,9 @@ a {
 }
 .app__tasks-item {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: end;
   margin-top: 1em;
   background-color: #f5f5f5;
   border-radius: 8px;
@@ -226,6 +227,12 @@ a {
   color: tomato;
 }
 
+@media (min-width: 576px) {
+  .app__tasks-item {
+    flex-direction: row;
+    align-items: center;
+  }
+}
 @media (min-width: 992px) {
   .nav {
     height: 80px;
@@ -316,5 +323,9 @@ a {
   .app--wide {
     width: calc(100% - 250px);
     margin-left: 250px;
+  }
+  .app__tasks-item {
+    flex-direction: row;
+    align-items: center;
   }
 }/*# sourceMappingURL=main.css.map */

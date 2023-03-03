@@ -1,2 +1,9 @@
 @media (min-width: 576px) {
+        .app {
+	
+		&__tasks-item {
+			flex-direction: row;
+			align-items: center;
+		}
+	}
 }

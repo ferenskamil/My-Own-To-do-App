@@ -54,10 +54,10 @@
 
 	&__tasks-item {
 		display: flex;
+		flex-direction: column;
 		justify-content: space-between;
-		align-items: center;
+		align-items: end;
 		margin-top: 1em;
-		// padding: 1.5em;
 		background-color: $light-grey;
 		border-radius: 8px;
 
