@@ -9,7 +9,7 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
-  background-color: #f5f5f5;
+  background-color: #fff;
 }
 
 body,
@@ -33,7 +33,7 @@ a {
   padding-right: 0.5em;
   height: 60px;
   width: 100%;
-  background-color: #f5f5f5;
+  background-color: #fff;
   font-size: 2.4rem;
   font-weight: 700;
   transition: width 1s;
@@ -142,7 +142,7 @@ a {
 .app {
   margin-top: 60px;
   padding: 1em;
-  background-color: #f5f5f5;
+  background-color: #fff;
   width: 100%;
 }
 .app__add {
@@ -151,70 +151,92 @@ a {
   align-items: center;
   width: 100%;
   padding: 2em;
-  background-color: #e8e2e2;
+  background-image: linear-gradient(to bottom right, #09c6f9, #648ac7);
   border-radius: 15px;
 }
 .app__add-input {
   width: 100%;
-  height: 30px;
+  height: 35px;
   padding: 0.5em;
   border-radius: 8px;
   border: 1px solid black;
+  font-size: 1.6rem;
 }
 .app__add-btn {
   border-radius: 8px;
   padding: 0.5em 2em;
   margin-left: 1em;
+  height: 35px;
   color: #fff;
   background-color: #055c9d;
   font-weight: 700;
   border: 1px solid transparent;
+  transition: color 0.3s, background-color 0.3s;
   cursor: pointer;
 }
 .app__add-btn:hover, .app__add-btn:active {
-  background-color: #0e86d4;
-  box-shadow: 0 0 5px black;
+  background-color: #f5f5f5;
+  color: black;
+}
+.app__tasks-list {
+  list-style-type: none;
+}
+.app__tasks-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1em;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+.app__tasks-item-text {
+  padding: 1em;
+  font-size: 1.6rem;
+}
+.app__tasks-item-settings {
+  display: flex;
+  margin: 0 1em;
+}
+.app__tasks-item-settings .done-btn,
+.app__tasks-item-settings .edit-btn,
+.app__tasks-item-settings .delete-btn {
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.app__tasks-item-settings .done-btn i,
+.app__tasks-item-settings .edit-btn i,
+.app__tasks-item-settings .delete-btn i {
+  padding: 0.5em;
+  font-size: 1.6rem;
+}
+.app__tasks-item-settings .done-btn:hover,
+.app__tasks-item-settings .edit-btn:hover,
+.app__tasks-item-settings .delete-btn:hover {
+  transform: scale(1.4);
+}
+.app__tasks-item-settings .done-btn {
+  color: green;
+}
+.app__tasks-item-settings .edit-btn {
+  color: royalblue;
+}
+.app__tasks-item-settings .delete-btn {
+  color: tomato;
 }
 
 @media (min-width: 992px) {
   .nav {
-    position: fixed;
-    top: 0;
-    right: 0;
     height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: calc(100% - 80px);
     padding: 1em;
-    background-color: #f5f5f5;
-    font-size: 2.4rem;
-    font-weight: 700;
-  }
-  .nav__burger-btn {
-    display: none;
   }
   .nav--wide {
     width: calc(100% - 250px);
   }
-  .nav__avatar {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 5px;
-    height: 50px;
-    width: 80px;
-    background-color: transparent;
-    border-radius: 12px;
-    border: 1px solid rgb(195, 193, 193);
-    cursor: pointer;
-  }
-  .nav__avatar:hover {
-    background-color: #e8e2e2;
-  }
-  .nav__avatar img {
-    height: 35px;
-    width: 35px;
+  .nav__burger-btn {
+    display: none;
   }
   .nav__greeting {
     display: block;
@@ -285,11 +307,10 @@ a {
     visibility: visible;
   }
   .app {
-    width: calc(100% - 80px);
     margin-top: 80px;
     margin-left: 80px;
     padding: 2em;
-    background-color: #f5f5f5;
+    width: calc(100% - 80px);
     transition: 1s;
   }
   .app--wide {
