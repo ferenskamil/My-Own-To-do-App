@@ -63,7 +63,7 @@ a {
   cursor: pointer;
 }
 .nav__avatar:hover {
-  background-color: #e8e2e2;
+  background-color: #f5f5f5;
 }
 .nav__avatar img {
   height: 35px;
@@ -196,8 +196,23 @@ a {
   border-radius: 8px;
 }
 .app__tasks-item-text {
+  position: relative;
   padding: 1em;
   font-size: 1.6rem;
+}
+.app__tasks-item .editable-text {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5em;
+  margin: 0.5em;
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 8px;
+  z-index: 5;
 }
 .app__tasks-item-settings {
   display: flex;

@@ -12,7 +12,6 @@
 		align-items: center;
 		width: 100%;
 		padding: 2em;
-		// background-color: $light-blue;
 		background-image: linear-gradient(to bottom right, #09c6f9, #648ac7);
 		border-radius: 15px;
 
@@ -68,8 +67,28 @@
 		border-radius: 8px;
 
 		&-text {
+			position: relative;
 			padding: 1em;
 			font-size: 1.6rem;
+		}
+
+		.solid-text {
+			
+		}
+
+		.editable-text {
+			display: none;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			padding: 0.5em;
+			margin: 0.5em;
+			background-color: $white;
+			border: 1px solid black;
+			border-radius: 8px;
+			z-index: 5;
 		}
 
 		&-settings {
