@@ -178,6 +178,11 @@ a {
   background-color: #f5f5f5;
   color: black;
 }
+.app__tasks-area-info {
+  margin-top: 1em;
+  text-align: center;
+  font-size: 1.6rem;
+}
 .app__tasks-list {
   list-style-type: none;
 }
