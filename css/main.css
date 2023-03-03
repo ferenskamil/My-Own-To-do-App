@@ -220,7 +220,8 @@ a {
 }
 .app__tasks-item-settings .done-btn,
 .app__tasks-item-settings .edit-btn,
-.app__tasks-item-settings .delete-btn {
+.app__tasks-item-settings .delete-btn,
+.app__tasks-item-settings .save-btn {
   background-color: transparent;
   border: 1px solid transparent;
   cursor: pointer;
@@ -228,13 +229,15 @@ a {
 }
 .app__tasks-item-settings .done-btn i,
 .app__tasks-item-settings .edit-btn i,
-.app__tasks-item-settings .delete-btn i {
+.app__tasks-item-settings .delete-btn i,
+.app__tasks-item-settings .save-btn i {
   padding: 0.5em;
   font-size: 1.6rem;
 }
 .app__tasks-item-settings .done-btn:hover,
 .app__tasks-item-settings .edit-btn:hover,
-.app__tasks-item-settings .delete-btn:hover {
+.app__tasks-item-settings .delete-btn:hover,
+.app__tasks-item-settings .save-btn:hover {
   transform: scale(1.4);
 }
 .app__tasks-item-settings .done-btn {

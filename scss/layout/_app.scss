@@ -97,7 +97,8 @@
 
 			.done-btn,
 			.edit-btn,
-			.delete-btn {
+			.delete-btn,
+			.save-btn {
 				background-color: transparent;
 				border: 1px solid transparent;
 				cursor: pointer;
@@ -110,7 +111,8 @@
 
 			.done-btn:hover,
 			.edit-btn:hover,
-			.delete-btn:hover {
+			.delete-btn:hover,
+			.save-btn:hover {
 				transform: scale(1.4);
 			}
 
