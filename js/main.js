@@ -106,6 +106,7 @@ document.addEventListener('keydown', (e) => {
 	}
 });
 
+// Need to refactor this click and replacw with something else
 document.addEventListener('click', (e) => {
 	const taskItem = e.target.closest('.app__tasks-item');
 	const closestItemText = taskItem.firstChild;

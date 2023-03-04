@@ -201,7 +201,7 @@ a {
   position: relative;
   padding: 1em;
   font-size: 1.6rem;
-  word-wrap: break-word;
+  word-break: break-all;
 }
 .app__tasks-item-text--done {
   color: grey;
