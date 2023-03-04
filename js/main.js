@@ -107,22 +107,22 @@ document.addEventListener('keydown', (e) => {
 });
 
 document.addEventListener('click', (e) => {
-	console.log(e.target);
+
 
 	const taskItem = e.target.closest('.app__tasks-item');
+	const closestItemText = taskItem.firstChild;
 
 	if (e.target.classList.contains('fa-trash')) {
 		taskItem.outerHTML = '';
 	}
 
 	if (e.target.classList.contains('fa-check')) {
-		let closestItemText = taskItem.firstChild;
 		closestItemText.classList.toggle('app__tasks-item-text--done');
 	}
 
 	// to refactoring
 	if (e.target.classList.contains('fa-pen-to-square')) {
-		taskItem.setAttribute('contenteditable', 'true');
+		closestItemText.setAttribute('contenteditable', 'true');
 		let closestDoneBtn = e.target.closest('div').childNodes[0];
 		closestDoneBtn.style.visibility = 'hidden';
 
@@ -138,7 +138,7 @@ document.addEventListener('click', (e) => {
 
 	// to refactoring
 	if (e.target.classList.contains('fa-floppy-disk')) {
-		taskItem.setAttribute('contenteditable', 'false');
+		closestItemText.setAttribute('contenteditable', 'false');
 
 		let closestDoneBtn = e.target.closest('div').childNodes[0];
 		closestDoneBtn.style.visibility = 'visible';
@@ -153,3 +153,21 @@ document.addEventListener('click', (e) => {
 		closestSaveBtn.style.display = 'none';
 	}
 });
+
+// document.addEventListener('keydown', (e) => {
+// 	// console.log(e.target);
+
+// 	const taskItem = e.target.closest('.app__tasks-item');
+// 	// console.log(taskItem);
+
+// 	// let closestItemText = taskItem.firstChild;
+
+// 	if (e.target === taskItem) {
+// 		console.log(taskItem.firstChild.textContent.length);
+
+// 		if (taskItem.firstChild.textContent.length === 0) {
+// 			taskItem.firstChild.textContent = '>';
+// 		}
+// 		// console.log(closestItemText.textContent);
+// 	}
+// });
