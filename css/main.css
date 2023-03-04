@@ -37,6 +37,7 @@ a {
   font-size: 2.4rem;
   font-weight: 700;
   transition: width 1s;
+  z-index: 10;
 }
 .nav--wide {
   width: calc(100% - 220px);
@@ -179,7 +180,7 @@ a {
   color: black;
 }
 .app__tasks-area-info {
-  display: none;
+  display: block;
   margin-top: 1em;
   text-align: center;
   font-size: 1.6rem;
@@ -191,7 +192,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: end;
+  align-items: start;
   margin-top: 1em;
   background-color: #f5f5f5;
   border-radius: 8px;
@@ -200,6 +201,11 @@ a {
   position: relative;
   padding: 1em;
   font-size: 1.6rem;
+  word-wrap: break-word;
+}
+.app__tasks-item-text--done {
+  color: grey;
+  text-decoration: line-through;
 }
 .app__tasks-item .editable-text {
   display: none;
@@ -213,11 +219,11 @@ a {
   background-color: #fff;
   border: 1px solid black;
   border-radius: 8px;
-  z-index: 5;
 }
 .app__tasks-item-settings {
   display: flex;
   margin: 0 1em;
+  align-self: flex-end;
 }
 .app__tasks-item-settings .done-btn,
 .app__tasks-item-settings .edit-btn,
@@ -244,8 +250,12 @@ a {
 .app__tasks-item-settings .done-btn {
   color: green;
 }
-.app__tasks-item-settings .edit-btn {
+.app__tasks-item-settings .edit-btn,
+.app__tasks-item-settings .save-btn {
   color: royalblue;
+}
+.app__tasks-item-settings .save-btn {
+  display: none;
 }
 .app__tasks-item-settings .delete-btn {
   color: tomato;
@@ -255,6 +265,9 @@ a {
   .app__tasks-item {
     flex-direction: row;
     align-items: center;
+  }
+  .app__tasks-item-settings {
+    align-self: auto;
   }
 }
 @media (min-width: 992px) {

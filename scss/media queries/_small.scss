@@ -1,9 +1,12 @@
 @media (min-width: 576px) {
-        .app {
-	
+	.app {
 		&__tasks-item {
 			flex-direction: row;
 			align-items: center;
+
+			&-settings {
+				align-self: auto;
+			}
 		}
 	}
 }

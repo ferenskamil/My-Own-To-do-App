@@ -106,3 +106,50 @@ document.addEventListener('keydown', (e) => {
 	}
 });
 
+document.addEventListener('click', (e) => {
+	console.log(e.target);
+
+	const taskItem = e.target.closest('.app__tasks-item');
+
+	if (e.target.classList.contains('fa-trash')) {
+		taskItem.outerHTML = '';
+	}
+
+	if (e.target.classList.contains('fa-check')) {
+		let closestItemText = taskItem.firstChild;
+		closestItemText.classList.toggle('app__tasks-item-text--done');
+	}
+
+	// to refactoring
+	if (e.target.classList.contains('fa-pen-to-square')) {
+		taskItem.setAttribute('contenteditable', 'true');
+		let closestDoneBtn = e.target.closest('div').childNodes[0];
+		closestDoneBtn.style.visibility = 'hidden';
+
+		let closestDeleteBtn = e.target.closest('div').childNodes[3];
+		closestDeleteBtn.style.visibility = 'hidden';
+
+		let closestEditBtn = e.target.closest('div').childNodes[1];
+		closestEditBtn.style.display = 'none';
+
+		let closestSaveBtn = e.target.closest('div').childNodes[2];
+		closestSaveBtn.style.display = 'block';
+	}
+
+	// to refactoring
+	if (e.target.classList.contains('fa-floppy-disk')) {
+		taskItem.setAttribute('contenteditable', 'false');
+
+		let closestDoneBtn = e.target.closest('div').childNodes[0];
+		closestDoneBtn.style.visibility = 'visible';
+
+		let closestDeleteBtn = e.target.closest('div').childNodes[3];
+		closestDeleteBtn.style.visibility = 'visible';
+
+		let closestEditBtn = e.target.closest('div').childNodes[1];
+		closestEditBtn.style.display = 'block';
+
+		let closestSaveBtn = e.target.closest('div').childNodes[2];
+		closestSaveBtn.style.display = 'none';
+	}
+});

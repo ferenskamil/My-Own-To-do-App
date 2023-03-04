@@ -46,7 +46,7 @@
 
 	&__tasks-area {
 		&-info {
-			display: none;
+			display: block;
 			margin-top: 1em;
 			text-align: center;
 			font-size: 1.6rem;
@@ -61,7 +61,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		align-items: end;
+		align-items: start;
 		margin-top: 1em;
 		background-color: $light-grey;
 		border-radius: 8px;
@@ -70,9 +70,14 @@
 			position: relative;
 			padding: 1em;
 			font-size: 1.6rem;
-		}
+			// word-break: break-all;
+			word-wrap: break-word;
 
-		.solid-text {
+			&--done {
+				color: grey;
+				// font-size: 1.3rem;
+				text-decoration: line-through;
+			}
 		}
 
 		.editable-text {
@@ -87,12 +92,12 @@
 			background-color: $white;
 			border: 1px solid black;
 			border-radius: 8px;
-			z-index: 5;
 		}
 
 		&-settings {
 			display: flex;
 			margin: 0 1em;
+			align-self: flex-end;
 
 			.done-btn,
 			.edit-btn,
@@ -119,8 +124,13 @@
 				color: green;
 			}
 
-			.edit-btn {
+			.edit-btn,
+			.save-btn {
 				color: royalblue;
+			}
+
+			.save-btn {
+				display: none;
 			}
 
 			.delete-btn {
