@@ -107,10 +107,12 @@ document.addEventListener('keydown', (e) => {
 });
 
 document.addEventListener('click', (e) => {
-
-
 	const taskItem = e.target.closest('.app__tasks-item');
 	const closestItemText = taskItem.firstChild;
+	const closestDoneBtn = e.target.closest('div').childNodes[0];
+	const closestDeleteBtn = e.target.closest('div').childNodes[3];
+	const closestEditBtn = e.target.closest('div').childNodes[1];
+	const closestSaveBtn = e.target.closest('div').childNodes[2];
 
 	if (e.target.classList.contains('fa-trash')) {
 		taskItem.outerHTML = '';
@@ -123,51 +125,18 @@ document.addEventListener('click', (e) => {
 	// to refactoring
 	if (e.target.classList.contains('fa-pen-to-square')) {
 		closestItemText.setAttribute('contenteditable', 'true');
-		let closestDoneBtn = e.target.closest('div').childNodes[0];
 		closestDoneBtn.style.visibility = 'hidden';
-
-		let closestDeleteBtn = e.target.closest('div').childNodes[3];
 		closestDeleteBtn.style.visibility = 'hidden';
-
-		let closestEditBtn = e.target.closest('div').childNodes[1];
 		closestEditBtn.style.display = 'none';
-
-		let closestSaveBtn = e.target.closest('div').childNodes[2];
 		closestSaveBtn.style.display = 'block';
 	}
 
 	// to refactoring
 	if (e.target.classList.contains('fa-floppy-disk')) {
 		closestItemText.setAttribute('contenteditable', 'false');
-
-		let closestDoneBtn = e.target.closest('div').childNodes[0];
 		closestDoneBtn.style.visibility = 'visible';
-
-		let closestDeleteBtn = e.target.closest('div').childNodes[3];
 		closestDeleteBtn.style.visibility = 'visible';
-
-		let closestEditBtn = e.target.closest('div').childNodes[1];
 		closestEditBtn.style.display = 'block';
-
-		let closestSaveBtn = e.target.closest('div').childNodes[2];
 		closestSaveBtn.style.display = 'none';
 	}
 });
-
-// document.addEventListener('keydown', (e) => {
-// 	// console.log(e.target);
-
-// 	const taskItem = e.target.closest('.app__tasks-item');
-// 	// console.log(taskItem);
-
-// 	// let closestItemText = taskItem.firstChild;
-
-// 	if (e.target === taskItem) {
-// 		console.log(taskItem.firstChild.textContent.length);
-
-// 		if (taskItem.firstChild.textContent.length === 0) {
-// 			taskItem.firstChild.textContent = '>';
-// 		}
-// 		// console.log(closestItemText.textContent);
-// 	}
-// });
