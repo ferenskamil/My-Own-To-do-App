@@ -1,15 +1,16 @@
 const nav = document.querySelector('.nav');
 const app = document.querySelector('.app');
+const burgerBtn = document.querySelector('.nav__mobile-burger-btn');
 const sidebar = document.querySelector('.sidebar');
 const sidebarDescriptions = document.querySelectorAll('.sidebar__description');
-const burgerBtn = document.querySelector('.nav__mobile-burger-btn');
+const sidebarItems = document.querySelectorAll('.sidebar__option');
 
 const addInput = document.querySelector('.app__add-input');
 const addBtn = document.querySelector('.app__add-btn');
+
 const tasksInfo = document.querySelector('.app__tasks-area-info');
 const tasksList = document.querySelector('.app__tasks-list');
 const tasksItems = document.getElementsByClassName('app__tasks-item');
-const sidebarItems = document.querySelectorAll('.sidebar__option');
 
 const openSideBar = () => {
 	sidebar.classList.add('sidebar--open');
