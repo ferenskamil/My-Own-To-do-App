@@ -10,6 +10,8 @@ const tasksInfo = document.querySelector('.app__tasks-area-info');
 const tasksList = document.querySelector('.app__tasks-list');
 const tasksItems = document.getElementsByClassName('app__tasks-item');
 
+console.log(window.innerWidth);
+
 // consider if necessary
 // const taskItem = document.getElementsByClassName('app__tasks-item');
 const taskText = document.getElementsByClassName('app__tasks-item-text');
@@ -94,18 +96,7 @@ const addNewTask = () => {
 	updateNoneTasksInfo();
 };
 
-sidebar.addEventListener('mousemove', openSideBar);
-sidebar.addEventListener('mouseleave', hideSideBar);
-burgerBtn.addEventListener('click', toggleSidebar);
-addBtn.addEventListener('click', addNewTask);
-document.addEventListener('keydown', (e) => {
-	if (e.key === 'Enter') {
-		addNewTask();
-	}
-});
-
-// Need to refactor this click and replacw with something else
-document.addEventListener('click', (e) => {
+const closestTaskSettings = (e) => {
 	const taskItem = e.target.closest('.app__tasks-item');
 	const closestItemText = taskItem.firstChild;
 	const closestDoneBtn = e.target.closest('div').childNodes[0];
@@ -139,4 +130,16 @@ document.addEventListener('click', (e) => {
 		closestEditBtn.style.display = 'block';
 		closestSaveBtn.style.display = 'none';
 	}
+};
+
+sidebar.addEventListener('mousemove', openSideBar);
+sidebar.addEventListener('mouseleave', hideSideBar);
+burgerBtn.addEventListener('click', toggleSidebar);
+addBtn.addEventListener('click', addNewTask);
+document.addEventListener('keydown', (e) => {
+	if (e.key === 'Enter') {
+		addNewTask();
+	}
 });
+
+document.addEventListener('click', (e) => closestTaskSettings(e));
