@@ -96,6 +96,11 @@ const addNewTask = () => {
 	updateNoneTasksInfo();
 };
 
+const deleteTask = () => {
+	taskItem.outerHTML = '';
+	updateNoneTasksInfo();
+};
+
 const closestTaskSettings = (e) => {
 	const taskItem = e.target.closest('.app__tasks-item');
 	const closestItemText = taskItem.firstChild;
@@ -105,8 +110,7 @@ const closestTaskSettings = (e) => {
 	const closestSaveBtn = e.target.closest('div').childNodes[2];
 
 	if (e.target.classList.contains('fa-trash')) {
-		taskItem.outerHTML = '';
-		updateNoneTasksInfo();
+		deleteTask();
 	}
 
 	if (e.target.classList.contains('fa-check')) {
