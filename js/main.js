@@ -10,10 +10,6 @@ const tasksInfo = document.querySelector('.app__tasks-area-info');
 const tasksList = document.querySelector('.app__tasks-list');
 const tasksItems = document.getElementsByClassName('app__tasks-item');
 
-console.log(window.innerWidth);
-
-// consider if necessary
-// const taskItem = document.getElementsByClassName('app__tasks-item');
 const taskText = document.getElementsByClassName('app__tasks-item-text');
 const checkBtn = document.getElementsByClassName('check-btn');
 const editBtn = document.getElementsByClassName('edit-btn');
@@ -158,14 +154,15 @@ const closestTaskSettings = (e) => {
 	}
 };
 
+const keyShortcuts = (e) => {
+	if (e.key === 'Enter') {
+		addNewTask();
+	}
+};
+
 sidebar.addEventListener('mousemove', openSideBar);
 sidebar.addEventListener('mouseleave', hideSideBar);
 burgerBtn.addEventListener('click', toggleSidebar);
 addBtn.addEventListener('click', addNewTask);
-document.addEventListener('keydown', (e) => {
-	if (e.key === 'Enter') {
-		addNewTask();
-	}
-});
-
+document.addEventListener('keydown', (e) => keyShortcuts(e));
 document.addEventListener('click', (e) => closestTaskSettings(e));
