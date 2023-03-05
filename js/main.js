@@ -98,9 +98,16 @@ const addNewTask = () => {
 
 const deleteTask = (e) => {
 	const taskItem = e.target.closest('.app__tasks-item');
-	
+
 	taskItem.outerHTML = '';
 	updateNoneTasksInfo();
+};
+
+const checkTaskAsDone = (e) => {
+	const taskItem = e.target.closest('.app__tasks-item');
+	const closestItemText = taskItem.firstChild;
+
+	closestItemText.classList.toggle('app__tasks-item-text--done');
 };
 
 const closestTaskSettings = (e) => {
@@ -116,10 +123,9 @@ const closestTaskSettings = (e) => {
 	}
 
 	if (e.target.classList.contains('fa-check')) {
-		closestItemText.classList.toggle('app__tasks-item-text--done');
+		checkTaskAsDone(e);
 	}
 
-	// to refactoring
 	if (e.target.classList.contains('fa-pen-to-square')) {
 		closestItemText.setAttribute('contenteditable', 'true');
 		closestDoneBtn.style.visibility = 'hidden';
