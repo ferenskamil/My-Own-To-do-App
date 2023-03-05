@@ -110,7 +110,7 @@ const checkTaskAsDone = (e) => {
 	closestItemText.classList.toggle('app__tasks-item-text--done');
 };
 
-const startEditText = () => {
+const startEditText = (e) => {
 	const taskItem = e.target.closest('.app__tasks-item');
 	const closestItemText = taskItem.firstChild;
 	const closestDoneBtn = e.target.closest('div').childNodes[0];
@@ -123,10 +123,24 @@ const startEditText = () => {
 	closestDeleteBtn.style.visibility = 'hidden';
 	closestEditBtn.style.display = 'none';
 	closestSaveBtn.style.display = 'block';
-}
+};
+
+const saveEditedText = (e) => {
+	const taskItem = e.target.closest('.app__tasks-item');
+	const closestItemText = taskItem.firstChild;
+	const closestDoneBtn = e.target.closest('div').childNodes[0];
+	const closestDeleteBtn = e.target.closest('div').childNodes[3];
+	const closestEditBtn = e.target.closest('div').childNodes[1];
+	const closestSaveBtn = e.target.closest('div').childNodes[2];
+
+	closestItemText.setAttribute('contenteditable', 'false');
+	closestDoneBtn.style.visibility = 'visible';
+	closestDeleteBtn.style.visibility = 'visible';
+	closestEditBtn.style.display = 'block';
+	closestSaveBtn.style.display = 'none';
+};
 
 const closestTaskSettings = (e) => {
-
 	if (e.target.classList.contains('fa-trash')) {
 		deleteTask(e);
 	}
@@ -136,15 +150,11 @@ const closestTaskSettings = (e) => {
 	}
 
 	if (e.target.classList.contains('fa-pen-to-square')) {
-		startEditText(e)
+		startEditText(e);
 	}
 
 	if (e.target.classList.contains('fa-floppy-disk')) {
-		closestItemText.setAttribute('contenteditable', 'false');
-		closestDoneBtn.style.visibility = 'visible';
-		closestDeleteBtn.style.visibility = 'visible';
-		closestEditBtn.style.display = 'block';
-		closestSaveBtn.style.display = 'none';
+		saveEditedText(e);
 	}
 };
 
