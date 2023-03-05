@@ -9,12 +9,14 @@ const addBtn = document.querySelector('.app__add-btn');
 const tasksInfo = document.querySelector('.app__tasks-area-info');
 const tasksList = document.querySelector('.app__tasks-list');
 const tasksItems = document.getElementsByClassName('app__tasks-item');
+const sidebarItems = document.querySelectorAll('.sidebar__option');
 
-const taskText = document.getElementsByClassName('app__tasks-item-text');
-const checkBtn = document.getElementsByClassName('check-btn');
-const editBtn = document.getElementsByClassName('edit-btn');
-const saveBtn = document.getElementsByClassName('save-btn');
-const deleteBtn = document.getElementsByClassName('delete-btn');
+// to refactoring or delete1
+// const taskText = document.getElementsByClassName('app__tasks-item-text');
+// const checkBtn = document.getElementsByClassName('check-btn');
+// const editBtn = document.getElementsByClassName('edit-btn');
+// const saveBtn = document.getElementsByClassName('save-btn');
+// const deleteBtn = document.getElementsByClassName('delete-btn');
 
 const openSideBar = () => {
 	sidebar.classList.add('sidebar--open');
@@ -36,11 +38,8 @@ const hideSideBar = () => {
 };
 
 const toggleSidebar = () => {
-	if (!sidebar.classList.contains('sidebar--open')) {
-		openSideBar();
-	} else {
-		hideSideBar();
-	}
+	sidebar.classList.toggle('sidebar--open');
+	nav.classList.toggle('nav--wide');
 };
 
 const updateNoneTasksInfo = () => {
@@ -163,6 +162,9 @@ const keyShortcuts = (e) => {
 sidebar.addEventListener('mousemove', openSideBar);
 sidebar.addEventListener('mouseleave', hideSideBar);
 burgerBtn.addEventListener('click', toggleSidebar);
+sidebarItems.forEach((item) => {
+	item.addEventListener('click', hideSideBar);
+});
 addBtn.addEventListener('click', addNewTask);
 document.addEventListener('keydown', (e) => keyShortcuts(e));
 document.addEventListener('click', (e) => closestTaskSettings(e));
