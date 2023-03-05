@@ -11,13 +11,6 @@ const tasksList = document.querySelector('.app__tasks-list');
 const tasksItems = document.getElementsByClassName('app__tasks-item');
 const sidebarItems = document.querySelectorAll('.sidebar__option');
 
-// to refactoring or delete1
-// const taskText = document.getElementsByClassName('app__tasks-item-text');
-// const checkBtn = document.getElementsByClassName('check-btn');
-// const editBtn = document.getElementsByClassName('edit-btn');
-// const saveBtn = document.getElementsByClassName('save-btn');
-// const deleteBtn = document.getElementsByClassName('delete-btn');
-
 const openSideBar = () => {
 	sidebar.classList.add('sidebar--open');
 	nav.classList.add('nav--wide');
