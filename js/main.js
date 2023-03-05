@@ -8,6 +8,7 @@ const addInput = document.querySelector('.app__add-input');
 const addBtn = document.querySelector('.app__add-btn');
 const tasksInfo = document.querySelector('.app__tasks-area-info');
 const tasksList = document.querySelector('.app__tasks-list');
+const tasksItems = document.getElementsByClassName('app__tasks-item');
 
 // consider if necessary
 // const taskItem = document.getElementsByClassName('app__tasks-item');
@@ -16,9 +17,6 @@ const checkBtn = document.getElementsByClassName('check-btn');
 const editBtn = document.getElementsByClassName('edit-btn');
 const saveBtn = document.getElementsByClassName('save-btn');
 const deleteBtn = document.getElementsByClassName('delete-btn');
-
-// console.log(taskItem);
-// console.log(taskText[0].textContent);
 
 const openSideBar = () => {
 	sidebar.classList.add('sidebar--open');
@@ -48,7 +46,7 @@ const toggleSidebar = () => {
 };
 
 const updateNoneTasksInfo = () => {
-	if (tasksList.length === 0) {
+	if (tasksItems.length === 0) {
 		tasksInfo.style.display = 'block';
 	} else {
 		tasksInfo.style.display = 'none';
@@ -117,6 +115,7 @@ document.addEventListener('click', (e) => {
 
 	if (e.target.classList.contains('fa-trash')) {
 		taskItem.outerHTML = '';
+		updateNoneTasksInfo();
 	}
 
 	if (e.target.classList.contains('fa-check')) {
