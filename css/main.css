@@ -199,13 +199,19 @@ a {
 }
 .app__tasks-item-text {
   position: relative;
-  padding: 1em;
+  padding: 0.5em;
+  margin: 0.5em;
   font-size: 1.6rem;
   word-break: break-all;
 }
 .app__tasks-item-text--done {
   color: grey;
   text-decoration: line-through;
+}
+.app__tasks-item-text--edit {
+  border: 1px solid black;
+  border-radius: 8px;
+  outline: none;
 }
 .app__tasks-item .editable-text {
   display: none;
