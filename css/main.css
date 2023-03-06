@@ -210,7 +210,7 @@ a {
   color: grey;
   text-decoration: line-through;
 }
-.app__tasks-item-text .editable-text {
+.app__tasks-item .editable-text {
   display: none;
   position: absolute;
   top: 0;
@@ -223,44 +223,44 @@ a {
   border: 1px solid black;
   border-radius: 8px;
 }
-.app__tasks-item-text-settings {
+.app__tasks-item-settings {
   display: flex;
   margin: 0 1em;
   align-self: flex-end;
 }
-.app__tasks-item-text-settings .done-btn,
-.app__tasks-item-text-settings .edit-btn,
-.app__tasks-item-text-settings .delete-btn,
-.app__tasks-item-text-settings .save-btn {
+.app__tasks-item-settings .done-btn,
+.app__tasks-item-settings .edit-btn,
+.app__tasks-item-settings .delete-btn,
+.app__tasks-item-settings .save-btn {
   background-color: transparent;
   border: 1px solid transparent;
   cursor: pointer;
   transition: transform 0.3s;
 }
-.app__tasks-item-text-settings .done-btn i,
-.app__tasks-item-text-settings .edit-btn i,
-.app__tasks-item-text-settings .delete-btn i,
-.app__tasks-item-text-settings .save-btn i {
+.app__tasks-item-settings .done-btn i,
+.app__tasks-item-settings .edit-btn i,
+.app__tasks-item-settings .delete-btn i,
+.app__tasks-item-settings .save-btn i {
   padding: 0.5em;
   font-size: 1.6rem;
 }
-.app__tasks-item-text-settings .done-btn:hover,
-.app__tasks-item-text-settings .edit-btn:hover,
-.app__tasks-item-text-settings .delete-btn:hover,
-.app__tasks-item-text-settings .save-btn:hover {
+.app__tasks-item-settings .done-btn:hover,
+.app__tasks-item-settings .edit-btn:hover,
+.app__tasks-item-settings .delete-btn:hover,
+.app__tasks-item-settings .save-btn:hover {
   transform: scale(1.4);
 }
-.app__tasks-item-text-settings .done-btn {
+.app__tasks-item-settings .done-btn {
   color: green;
 }
-.app__tasks-item-text-settings .edit-btn,
-.app__tasks-item-text-settings .save-btn {
+.app__tasks-item-settings .edit-btn,
+.app__tasks-item-settings .save-btn {
   color: royalblue;
 }
-.app__tasks-item-text-settings .save-btn {
+.app__tasks-item-settings .save-btn {
   display: none;
 }
-.app__tasks-item-text-settings .delete-btn {
+.app__tasks-item-settings .delete-btn {
   color: tomato;
 }
 

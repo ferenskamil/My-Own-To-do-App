@@ -107,7 +107,6 @@ const startEditText = (e) => {
 	const closestEditBtn = e.target.closest('div').childNodes[1];
 	const closestSaveBtn = e.target.closest('div').childNodes[2];
 
-	closestItemText.classList.add('app__tasks-item-text--edit');
 	closestItemText.contentEditable = 'true';
 	closestItemText.focus();
 	closestDoneBtn.style.visibility = 'hidden';
@@ -124,7 +123,6 @@ const saveEditedText = (e) => {
 	const closestEditBtn = e.target.closest('div').childNodes[1];
 	const closestSaveBtn = e.target.closest('div').childNodes[2];
 
-	closestItemText.classList.remove('app__tasks-item-text--edit');
 	closestItemText.contentEditable = 'false';
 	closestDoneBtn.style.visibility = 'visible';
 	closestDeleteBtn.style.visibility = 'visible';
