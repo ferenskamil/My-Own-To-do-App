@@ -1,4 +1,4 @@
-# My-Own-To-do-App
+# My Own To do App
 This is a to do application that I wrote independently. I got the design idea from canva and pinterest. I got the idea for the functionality from courses and my ideas.
 
 
