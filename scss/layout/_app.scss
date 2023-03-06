@@ -71,78 +71,72 @@
 			padding: 0.5em;
 			margin: 0.5em;
 			border: 1px solid transparent;
+			border-radius: 8px;
 			font-size: 1.6rem;
 			word-break: break-all;
 			// word-wrap: break-word;
 
 			&--done {
 				color: grey;
-				// font-size: 1.3rem;
 				text-decoration: line-through;
 			}
 
-			&--edit {
+			.editable-text {
+				display: none;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				padding: 0.5em;
+				margin: 0.5em;
+				background-color: $white;
 				border: 1px solid black;
 				border-radius: 8px;
-				outline: none;
 			}
-		}
 
-		.editable-text {
-			display: none;
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			padding: 0.5em;
-			margin: 0.5em;
-			background-color: $white;
-			border: 1px solid black;
-			border-radius: 8px;
-		}
+			&-settings {
+				display: flex;
+				margin: 0 1em;
+				align-self: flex-end;
 
-		&-settings {
-			display: flex;
-			margin: 0 1em;
-			align-self: flex-end;
-
-			.done-btn,
-			.edit-btn,
-			.delete-btn,
-			.save-btn {
-				background-color: transparent;
-				border: 1px solid transparent;
-				cursor: pointer;
-				transition: transform 0.3s;
-				i {
-					padding: 0.5em;
-					font-size: 1.6rem;
+				.done-btn,
+				.edit-btn,
+				.delete-btn,
+				.save-btn {
+					background-color: transparent;
+					border: 1px solid transparent;
+					cursor: pointer;
+					transition: transform 0.3s;
+					i {
+						padding: 0.5em;
+						font-size: 1.6rem;
+					}
 				}
-			}
 
-			.done-btn:hover,
-			.edit-btn:hover,
-			.delete-btn:hover,
-			.save-btn:hover {
-				transform: scale(1.4);
-			}
+				.done-btn:hover,
+				.edit-btn:hover,
+				.delete-btn:hover,
+				.save-btn:hover {
+					transform: scale(1.4);
+				}
 
-			.done-btn {
-				color: green;
-			}
+				.done-btn {
+					color: green;
+				}
 
-			.edit-btn,
-			.save-btn {
-				color: royalblue;
-			}
+				.edit-btn,
+				.save-btn {
+					color: royalblue;
+				}
 
-			.save-btn {
-				display: none;
-			}
+				.save-btn {
+					display: none;
+				}
 
-			.delete-btn {
-				color: tomato;
+				.delete-btn {
+					color: tomato;
+				}
 			}
 		}
 	}
