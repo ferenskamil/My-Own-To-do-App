@@ -201,6 +201,7 @@ a {
   position: relative;
   padding: 0.5em;
   margin: 0.5em;
+  border: 1px solid transparent;
   font-size: 1.6rem;
   word-break: break-all;
 }
