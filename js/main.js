@@ -85,28 +85,22 @@ const addNewTask = () => {
 	updateNoneTasksInfo();
 };
 
-const deleteTask = (e) => {
-	const taskItem = e.target.closest('.app__tasks-item');
-
+const deleteTask = (taskItem) => {
 	taskItem.outerHTML = '';
 	updateNoneTasksInfo();
 };
 
-const checkTaskAsDone = (e) => {
-	const taskItem = e.target.closest('.app__tasks-item');
-	const closestItemText = taskItem.firstChild;
-
+const checkTaskAsDone = (closestItemText) => {
 	closestItemText.classList.toggle('app__tasks-item-text--done');
 };
 
-const startEditText = (e) => {
-	const taskItem = e.target.closest('.app__tasks-item');
-	const closestItemText = taskItem.firstChild;
-	const closestDoneBtn = e.target.closest('div').childNodes[0];
-	const closestDeleteBtn = e.target.closest('div').childNodes[3];
-	const closestEditBtn = e.target.closest('div').childNodes[1];
-	const closestSaveBtn = e.target.closest('div').childNodes[2];
-
+const startEditText = (
+	closestItemText,
+	closestDoneBtn,
+	closestDeleteBtn,
+	closestEditBtn,
+	closestSaveBtn
+) => {
 	closestItemText.contentEditable = 'true';
 	closestItemText.focus();
 	closestDoneBtn.style.visibility = 'hidden';
@@ -115,14 +109,13 @@ const startEditText = (e) => {
 	closestSaveBtn.style.display = 'block';
 };
 
-const saveEditedText = (e) => {
-	const taskItem = e.target.closest('.app__tasks-item');
-	const closestItemText = taskItem.firstChild;
-	const closestDoneBtn = e.target.closest('div').childNodes[0];
-	const closestDeleteBtn = e.target.closest('div').childNodes[3];
-	const closestEditBtn = e.target.closest('div').childNodes[1];
-	const closestSaveBtn = e.target.closest('div').childNodes[2];
-
+const saveEditedText = (
+	closestItemText,
+	closestDoneBtn,
+	closestDeleteBtn,
+	closestEditBtn,
+	closestSaveBtn
+) => {
 	closestItemText.contentEditable = 'false';
 	closestDoneBtn.style.visibility = 'visible';
 	closestDeleteBtn.style.visibility = 'visible';
@@ -131,20 +124,39 @@ const saveEditedText = (e) => {
 };
 
 const closestTaskSettings = (e) => {
+	const taskItem = e.target.closest('.app__tasks-item');
+	const closestItemText = taskItem.firstChild;
+	const closestDoneBtn = e.target.closest('div').childNodes[0];
+	const closestDeleteBtn = e.target.closest('div').childNodes[3];
+	const closestEditBtn = e.target.closest('div').childNodes[1];
+	const closestSaveBtn = e.target.closest('div').childNodes[2];
+
 	if (e.target.classList.contains('fa-trash')) {
-		deleteTask(e);
+		deleteTask(taskItem);
 	}
 
 	if (e.target.classList.contains('fa-check')) {
-		checkTaskAsDone(e);
+		checkTaskAsDone(closestItemText);
 	}
-
+	
 	if (e.target.classList.contains('fa-pen-to-square')) {
-		startEditText(e);
+		startEditText(
+			closestItemText,
+			closestDoneBtn,
+			closestDeleteBtn,
+			closestEditBtn,
+			closestSaveBtn
+		);
 	}
 
 	if (e.target.classList.contains('fa-floppy-disk')) {
-		saveEditedText(e);
+		saveEditedText(
+			closestItemText,
+			closestDoneBtn,
+			closestDeleteBtn,
+			closestEditBtn,
+			closestSaveBtn
+		);
 	}
 };
 
