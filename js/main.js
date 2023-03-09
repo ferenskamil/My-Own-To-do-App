@@ -12,6 +12,14 @@ const tasksInfo = document.querySelector('.app__tasks-area-info');
 const tasksList = document.querySelector('.app__tasks-list');
 const tasksItems = document.getElementsByClassName('app__tasks-item');
 
+let taskArr = [];
+class Task {
+	constructor(textValue) {
+		this.id = Date.now();
+		this.text = textValue;
+	}
+}
+
 const openSideBar = () => {
 	sidebar.classList.add('sidebar--open');
 	nav.classList.add('nav--wide');
@@ -44,13 +52,13 @@ const updateNoneTasksInfo = () => {
 	}
 };
 
-const createNewTaskItem = () => {
+const createNewTaskItem = ({ text }) => {
 	const newTask = document.createElement('li');
 	newTask.classList.add('app__tasks-item');
 
 	const newTaskText = document.createElement('p');
 	newTaskText.classList.add('app__tasks-item-text');
-	newTaskText.textContent = addInput.value;
+	newTaskText.textContent = text;
 
 	const newTaskSettingsDiv = document.createElement('div');
 	newTaskSettingsDiv.classList.add('app__tasks-item-settings');
@@ -78,16 +86,25 @@ const createNewTaskItem = () => {
 
 const addNewTask = () => {
 	if (addInput.value !== '') {
-		createNewTaskItem();
+		const newTask = new Task(addInput.value);
+
+		taskArr.push(newTask);
+		createNewTaskItem(newTask);
+
 		addInput.value = '';
 	}
 
+	updateLocalStorage();
 	updateNoneTasksInfo();
 };
 
 const deleteTask = (taskItem) => {
 	taskItem.outerHTML = '';
 	updateNoneTasksInfo();
+
+	// ty musze przelecieć przez wszystkie obiekty w tabeli (czym?)
+	// jeżeli closestID (muszę dopisać id do DIVA) === id w obiekcie >>> to wtedy usuń obiekt z tabeli (zaktualizuj tabelę) >>> i zaktualizuj local storage
+	// podobne działanie z aktualizacją treści
 };
 
 const checkTaskAsDone = (closestItemText) => {
@@ -125,7 +142,7 @@ const saveEditedText = (
 
 const closestTaskSettings = (e) => {
 	const taskItem = e.target.closest('.app__tasks-item');
-	const closestItemText = taskItem.firstChild;
+	const closestItemText = taskItem.firstElementChild;
 	const closestDoneBtn = e.target.closest('div').childNodes[0];
 	const closestDeleteBtn = e.target.closest('div').childNodes[3];
 	const closestEditBtn = e.target.closest('div').childNodes[1];
@@ -138,7 +155,7 @@ const closestTaskSettings = (e) => {
 	if (e.target.classList.contains('fa-check')) {
 		checkTaskAsDone(closestItemText);
 	}
-	
+
 	if (e.target.classList.contains('fa-pen-to-square')) {
 		startEditText(
 			closestItemText,
@@ -164,8 +181,28 @@ const keyShortcuts = (e) => {
 	if (e.key === 'Enter') {
 		addNewTask();
 	}
+
+	// if (e.key === 'q') {
+	// 	console 	consol }
 };
 
+const downloadTasksFromLocalStorage = () => {
+	let parsedArr = JSON.parse(localStorage.getItem('TasksLocalCopy'));
+
+	if (parsedArr !== null) {
+		parsedArr.forEach((obj) => createNewTaskItem(obj));
+		taskArr = parsedArr;
+	}
+};
+
+const updateLocalStorage = () => {
+	let tasksStr = JSON.stringify(taskArr);
+
+	localStorage.setItem('TasksLocalCopy', tasksStr);
+};
+
+downloadTasksFromLocalStorage();
+updateNoneTasksInfo();
 sidebar.addEventListener('mousemove', openSideBar);
 sidebar.addEventListener('mouseleave', hideSideBar);
 burgerBtn.addEventListener('click', toggleSidebar);
