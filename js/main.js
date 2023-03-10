@@ -183,9 +183,6 @@ const keyShortcuts = (e) => {
 	if (e.key === 'Enter') {
 		addNewTask();
 	}
-
-	// if (e.key === 'q') {
-	// 	console 	consol }
 };
 
 const downloadTasksFromLocalStorage = () => {
