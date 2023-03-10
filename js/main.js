@@ -129,6 +129,7 @@ const startEditText = (
 };
 
 const saveEditedText = (
+	taskItem,
 	closestItemText,
 	closestDoneBtn,
 	closestDeleteBtn,
@@ -140,6 +141,17 @@ const saveEditedText = (
 	closestDeleteBtn.style.visibility = 'visible';
 	closestEditBtn.style.display = 'block';
 	closestSaveBtn.style.display = 'none';
+
+	const clickedId = parseInt(taskItem.getAttribute('id'));
+	const editedText = closestItemText.textContent;
+
+	testArr = taskArr.map((obj) => {
+		if (obj.id === clickedId) {
+			obj.text = editedText;
+		}
+	});
+
+	updateLocalStorage();
 };
 
 const closestTaskSettings = (e) => {
@@ -170,6 +182,7 @@ const closestTaskSettings = (e) => {
 
 	if (e.target.classList.contains('fa-floppy-disk')) {
 		saveEditedText(
+			taskItem,
 			closestItemText,
 			closestDoneBtn,
 			closestDeleteBtn,
