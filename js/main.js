@@ -17,6 +17,7 @@ class Task {
 	constructor(textValue) {
 		this.id = Date.now();
 		this.text = textValue;
+		this.isDone = false;
 	}
 }
 
@@ -52,7 +53,7 @@ const updateNoneTasksInfo = () => {
 	}
 };
 
-const createNewTaskItem = ({ text, id }) => {
+const createNewTaskItem = ({ text, id, isDone }) => {
 	const newTask = document.createElement('li');
 	newTask.classList.add('app__tasks-item');
 	newTask.setAttribute('id', id);
@@ -60,6 +61,10 @@ const createNewTaskItem = ({ text, id }) => {
 	const newTaskText = document.createElement('p');
 	newTaskText.classList.add('app__tasks-item-text');
 	newTaskText.textContent = text;
+
+	if (isDone === true) {
+		newTaskText.classList.add('app__tasks-item-text--done');
+	}
 
 	const newTaskSettingsDiv = document.createElement('div');
 	newTaskSettingsDiv.classList.add('app__tasks-item-settings');
@@ -109,8 +114,21 @@ const deleteTask = (taskItem) => {
 	updateNoneTasksInfo();
 };
 
-const checkTaskAsDone = (closestItemText) => {
+const checkTaskAsDone = (taskItem, closestItemText) => {
 	closestItemText.classList.toggle('app__tasks-item-text--done');
+
+	const clickedId = parseInt(taskItem.getAttribute('id'));
+	testArr = taskArr.map((obj) => {
+		if (obj.id === clickedId) {
+			if (obj.isDone === true) {
+				obj.isDone = false;
+			} else {
+				obj.isDone = true;
+			}
+		}
+	});
+
+	updateLocalStorage();
 };
 
 const startEditText = (
@@ -167,7 +185,7 @@ const closestTaskSettings = (e) => {
 	}
 
 	if (e.target.classList.contains('fa-check')) {
-		checkTaskAsDone(closestItemText);
+		checkTaskAsDone(taskItem, closestItemText);
 	}
 
 	if (e.target.classList.contains('fa-pen-to-square')) {
