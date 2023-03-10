@@ -7,6 +7,7 @@ During this project, I practiced:
 - adding and removing css classes 
 - event delegation
 - key shortcuts 
+- save data in local storage
 
 Functionality used: 
 - drop-down, responsive sidebar
@@ -14,3 +15,4 @@ Functionality used:
 - adding tasks using button or enter key
 - editing tasks 
 - marking tasks as done
+- save current state in local storage
