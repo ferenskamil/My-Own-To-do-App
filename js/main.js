@@ -52,9 +52,10 @@ const updateNoneTasksInfo = () => {
 	}
 };
 
-const createNewTaskItem = ({ text }) => {
+const createNewTaskItem = ({ text, id }) => {
 	const newTask = document.createElement('li');
 	newTask.classList.add('app__tasks-item');
+	newTask.setAttribute('id', id);
 
 	const newTaskText = document.createElement('p');
 	newTaskText.classList.add('app__tasks-item-text');
@@ -99,12 +100,13 @@ const addNewTask = () => {
 };
 
 const deleteTask = (taskItem) => {
-	taskItem.outerHTML = '';
-	updateNoneTasksInfo();
+	const clickedId = parseInt(taskItem.getAttribute('id'));
 
-	// ty musze przelecieć przez wszystkie obiekty w tabeli (czym?)
-	// jeżeli closestID (muszę dopisać id do DIVA) === id w obiekcie >>> to wtedy usuń obiekt z tabeli (zaktualizuj tabelę) >>> i zaktualizuj local storage
-	// podobne działanie z aktualizacją treści
+	taskArr = taskArr.filter((obj) => obj.id !== clickedId);
+
+	taskItem.outerHTML = '';
+	updateLocalStorage();
+	updateNoneTasksInfo();
 };
 
 const checkTaskAsDone = (closestItemText) => {
