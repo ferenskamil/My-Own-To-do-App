@@ -21,6 +21,21 @@ class Task {
 	}
 }
 
+const downloadTasksFromLocalStorage = () => {
+	let parsedArr = JSON.parse(localStorage.getItem('TasksLocalCopy'));
+
+	if (parsedArr !== null) {
+		parsedArr.forEach((obj) => createNewTaskItem(obj));
+		taskArr = parsedArr;
+	}
+};
+
+const updateLocalStorage = () => {
+	let tasksStr = JSON.stringify(taskArr);
+
+	localStorage.setItem('TasksLocalCopy', tasksStr);
+};
+
 const openSideBar = () => {
 	sidebar.classList.add('sidebar--open');
 	nav.classList.add('nav--wide');
@@ -216,20 +231,7 @@ const keyShortcuts = (e) => {
 	}
 };
 
-const downloadTasksFromLocalStorage = () => {
-	let parsedArr = JSON.parse(localStorage.getItem('TasksLocalCopy'));
 
-	if (parsedArr !== null) {
-		parsedArr.forEach((obj) => createNewTaskItem(obj));
-		taskArr = parsedArr;
-	}
-};
-
-const updateLocalStorage = () => {
-	let tasksStr = JSON.stringify(taskArr);
-
-	localStorage.setItem('TasksLocalCopy', tasksStr);
-};
 
 downloadTasksFromLocalStorage();
 updateNoneTasksInfo();
