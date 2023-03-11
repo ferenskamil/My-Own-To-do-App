@@ -42,9 +42,6 @@ a {
 .nav--wide {
   width: calc(100% - 220px);
 }
-.nav__mobile {
-  display: flex;
-}
 .nav__mobile-burger-btn {
   padding: 1em;
   color: #055c9d;
@@ -72,6 +69,39 @@ a {
 }
 .nav__greeting {
   display: none;
+}
+.nav__menu {
+  position: absolute;
+  top: 80%;
+  right: 0.5em;
+  height: 40px;
+  overflow: hidden;
+  transition: 0.5s;
+  z-index: -1;
+  transform: 10s;
+}
+.nav__menu--visible {
+  display: block;
+  z-index: 5;
+}
+.nav__menu-settings {
+  position: relative;
+  top: -45px;
+  font-size: 1.6rem;
+  list-style-type: none;
+  font-weight: 400;
+  background-color: #f5f5f5;
+  border: 1px solid #e8e2e2;
+  opacity: 0;
+  transition: 0.5s;
+}
+.nav__menu-settings--slided {
+  opacity: 1;
+  top: 0;
+}
+.nav__menu-settings-item {
+  padding: 10px;
+  cursor: pointer;
 }
 
 .sidebar {
@@ -209,19 +239,6 @@ a {
 .app__tasks-item-text--done {
   color: grey;
   text-decoration: line-through;
-}
-.app__tasks-item .editable-text {
-  display: none;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 0.5em;
-  margin: 0.5em;
-  background-color: #fff;
-  border: 1px solid black;
-  border-radius: 8px;
 }
 .app__tasks-item-settings {
   display: flex;

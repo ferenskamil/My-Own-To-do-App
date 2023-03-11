@@ -1,4 +1,8 @@
 const nav = document.querySelector('.nav');
+const navAvatar = document.querySelector('.nav__avatar');
+const navMenu = document.querySelector('.nav__menu');
+const navMenuItemList = document.querySelector('.nav__menu-settings');
+
 const app = document.querySelector('.app');
 const burgerBtn = document.querySelector('.nav__mobile-burger-btn');
 const sidebar = document.querySelector('.sidebar');
@@ -34,6 +38,11 @@ const updateLocalStorage = () => {
 	let tasksStr = JSON.stringify(taskArr);
 
 	localStorage.setItem('TasksLocalCopy', tasksStr);
+};
+
+const slideNavMenu = () => {
+	navMenu.classList.toggle('nav__menu--visible');
+	navMenuItemList.classList.toggle('nav__menu-settings--slided');
 };
 
 const openSideBar = () => {
@@ -231,10 +240,10 @@ const keyShortcuts = (e) => {
 	}
 };
 
-
-
 downloadTasksFromLocalStorage();
 updateNoneTasksInfo();
+navAvatar.addEventListener('click', slideNavMenu);
+// navMenu.addEventListener('mouseleave', slideNavMenu);
 sidebar.addEventListener('mousemove', openSideBar);
 sidebar.addEventListener('mouseleave', hideSideBar);
 burgerBtn.addEventListener('click', toggleSidebar);

@@ -54,4 +54,41 @@
 	&__greeting {
 		display: none;
 	}
+
+	&__menu {
+		position: absolute;
+		top: 80%;
+		right: 0.5em;
+		height: 40px;
+		overflow: hidden;
+		transition: 0.5s;
+		z-index: -1;
+		transform: 10s;
+
+		&--visible {
+			display: block;
+			z-index: 5;
+		}
+
+		&-settings {
+			position: relative;
+			top: -45px;
+			font-size: 1.6rem;
+			list-style-type: none;
+			font-weight: 400;
+			background-color: $light-grey;
+			border: 1px solid $darker-grey;
+			opacity: 0;
+			transition: 0.5s;
+
+			&--slided {
+				opacity: 1;
+				top: 0;
+			}
+			&-item {
+				padding: 10px;
+				cursor: pointer;
+			}
+		}
+	}
 }
