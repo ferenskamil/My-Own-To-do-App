@@ -89,3 +89,96 @@
 
 </body>
 </html>
+
+
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Google Fonts - MONTSERRAT-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
+
+        <!-- FontAwesome -->
+        <script src="https://kit.fontawesome.com/63681c7143.js" crossorigin="anonymous"></script>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="./css/main.css">
+
+        <!-- title -->
+        <title>My Own ToDoApp</title>
+</head>
+
+<body>
+        <div class="sidebar">
+                <a href="#">
+                        <div class="sidebar__title">
+                                <div class="sidebar__title-logo"><i class="fa-regular fa-circle-check"></i></div>
+                                <div class="sidebar__title-name sidebar__description">ToDoApp
+                                </div>
+                        </div>
+                </a>
+                <div class="sidebar__settings">
+                        <ul>
+                                <a href="#">
+                                        <li class="sidebar__option">
+                                                <div class="sidebar__option-icon"><i class="fa-solid fa-file"></i>
+                                                </div>
+                                                <div class="sidebar__option-name sidebar__description">ToDoApp</div>
+                                        </li>
+                                </a>
+                                <a href="#">
+                                        <li class="sidebar__option">
+                                                <div class="sidebar__option-icon"><i class="fa-solid fa-chart-line"></i>
+                                                </div>
+                                                <div class="sidebar__option-name sidebar__description">Statistics</div>
+                                        </li>
+                                </a>
+                                <a href="#">
+                                        <li class="sidebar__option">
+                                                <div class="sidebar__option-icon"><i class="fa-solid fa-gear"></i></div>
+                                                <div class="sidebar__option-name sidebar__description">Settings</div>
+                                        </li>
+                                </a>
+                        </ul>
+                </div>
+        </div>
+        <nav class="nav">
+                <div class="nav__burger-btn">
+                        <i class="fa-solid fa-bars nav__mobile-burger-btn"></i>
+                </div>
+                <p class="nav__greeting">Hello, <span class="nav__greeting-person">John</span>!</p>
+                <button class="nav__avatar"><img src="./img/avatars/man (1).png" alt="avatar"><i
+                                class="fa-solid fa-caret-down"></i></button>
+                <div class="nav__menu">
+                        <ul class="nav__menu-settings">
+                                <li class="nav__menu-settings-item">Ustawienia konta</li>
+                        </ul>
+                </div>
+        </nav>
+        <main class="app">
+                <div class="app__add">
+                        <input class="app__add-input" type="text" placeholder="What will you do today?">
+                        <button class="app__add-btn">ADD</button>
+                </div>
+                <div class="app__tasks-area">
+                        <p class="app__tasks-area-info">None tasks to display</p>
+                        <ul class="app__tasks-list">
+                        </ul>
+                </div>
+        </main>
+        <div class="settings">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ullam labore possimus odio culpa fugit
+                        dicta nesciunt consequuntur quidem voluptas.</p>
+        </div>
+
+        <!-- JS -->
+        <script src="./js/main.js"></script>
+
+</body>
+</html>
