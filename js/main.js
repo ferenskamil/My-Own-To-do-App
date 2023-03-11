@@ -274,3 +274,5 @@ navMenuItems.forEach((item) => {
 	item.addEventListener('click', slideNavMenu);
 });
 sidebarToDoAppItem.addEventListener('click', displayToDoApp);
+
+
