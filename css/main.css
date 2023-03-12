@@ -74,7 +74,7 @@ a {
   position: absolute;
   top: 80%;
   right: 0.5em;
-  height: 40px;
+  height: 50px;
   overflow: hidden;
   transition: 0.5s;
   z-index: -1;
@@ -93,7 +93,7 @@ a {
   background-color: #f5f5f5;
   border: 1px solid #e8e2e2;
   opacity: 0;
-  transition: 0.5s;
+  transition: top 0.5s, opacity 0.5s;
 }
 .nav__menu-settings--slided {
   opacity: 1;
@@ -304,6 +304,10 @@ a {
   }
   .nav__greeting {
     display: block;
+  }
+  .nav__menu {
+    top: 70%;
+    right: 1em;
   }
   .sidebar {
     position: fixed;

@@ -14,16 +14,12 @@
 			display: none;
 		}
 
-		&__avatar {
-			&:hover {
-			}
-
-			img {
-			}
-		}
-
 		&__greeting {
 			display: block;
+		}
+		&__menu {
+			top: 70%;
+			right: 1em;
 		}
 	}
 

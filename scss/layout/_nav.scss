@@ -59,7 +59,7 @@
 		position: absolute;
 		top: 80%;
 		right: 0.5em;
-		height: 40px;
+		height: 50px;
 		overflow: hidden;
 		transition: 0.5s;
 		z-index: -1;
@@ -79,7 +79,7 @@
 			background-color: $light-grey;
 			border: 1px solid $darker-grey;
 			opacity: 0;
-			transition: 0.5s;
+			transition: top 0.5s, opacity 0.5s;
 
 			&--slided {
 				opacity: 1;
