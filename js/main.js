@@ -1,7 +1,7 @@
 const nav = document.querySelector('.nav');
 const navAvatar = document.querySelector('.nav__avatar');
 const navMenu = document.querySelector('.nav__menu');
-const navMenuItemList = document.querySelector('.nav__menu-settings');
+const navMenuList = document.querySelector('.nav__menu-settings');
 
 const app = document.querySelector('.app');
 const burgerBtn = document.querySelector('.nav__mobile-burger-btn');
@@ -42,7 +42,7 @@ const updateLocalStorage = () => {
 
 const slideNavMenu = () => {
 	navMenu.classList.toggle('nav__menu--visible');
-	navMenuItemList.classList.toggle('nav__menu-settings--slided');
+	navMenuList.classList.toggle('nav__menu-settings--slided');
 };
 
 const openSideBar = () => {
@@ -239,6 +239,11 @@ const keyShortcuts = (e) => {
 		addNewTask();
 	}
 };
+
+const displaySettings() => {
+
+}
+
 
 downloadTasksFromLocalStorage();
 updateNoneTasksInfo();
