@@ -7,6 +7,7 @@ const navMenuItems = document.querySelectorAll('.nav__menu-settings-item');
 const app = document.querySelector('.app');
 const burgerBtn = document.querySelector('.nav__mobile-burger-btn');
 const sidebar = document.querySelector('.sidebar');
+const sidebarTitle = document.querySelector('.sidebar__title');
 const sidebarDescriptions = document.querySelectorAll('.sidebar__description');
 const sidebarItems = document.querySelectorAll('.sidebar__option');
 const sidebarToDoAppItem = sidebarItems[0];
@@ -274,5 +275,4 @@ navMenuItems.forEach((item) => {
 	item.addEventListener('click', slideNavMenu);
 });
 sidebarToDoAppItem.addEventListener('click', displayToDoApp);
-
-
+sidebarTitle.addEventListener('click', displayToDoApp);
