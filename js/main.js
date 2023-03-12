@@ -243,7 +243,6 @@ const keyShortcuts = (e) => {
 downloadTasksFromLocalStorage();
 updateNoneTasksInfo();
 navAvatar.addEventListener('click', slideNavMenu);
-// navMenu.addEventListener('mouseleave', slideNavMenu);
 sidebar.addEventListener('mousemove', openSideBar);
 sidebar.addEventListener('mouseleave', hideSideBar);
 burgerBtn.addEventListener('click', toggleSidebar);

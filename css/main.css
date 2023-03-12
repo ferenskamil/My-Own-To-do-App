@@ -281,6 +281,12 @@ a {
   color: tomato;
 }
 
+.app__settings {
+  width: 100%;
+  height: 100px;
+  background-color: royalblue;
+}
+
 @media (min-width: 576px) {
   .app__tasks-item {
     flex-direction: row;
