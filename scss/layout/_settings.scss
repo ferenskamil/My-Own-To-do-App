@@ -47,6 +47,7 @@
 
 				.settings__name-input {
 					width: 100%;
+					max-width: 400px;
 					margin-top: 0.2em;
 					padding: 3px;
 					font-size: 1.4rem;
@@ -55,6 +56,7 @@
 				}
 
 				.new-name-input-error {
+					display: none;
 					color: $dark-blue;
 					font-size: 1.2rem;
 				}
@@ -68,10 +70,40 @@
 			font-size: 1.8rem;
 			color: $main-blue;
 		}
+
+		&-item {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+			padding: 10px;
+			width: 70px;
+			height: 80px;
+
+			label {
+				img {
+					width: 50px;
+					height: 50px;
+				}
+			}
+
+			&--checked {
+				border: 1px solid $blue;
+				border-radius: 5px;
+				background-color: $light-blue-alpha;
+			}
+		}
+
+		&-list {
+			display: flex;
+			justify-content: start;
+			flex-wrap: wrap;
+		}
 	}
 
 	&__btn {
 		align-self: flex-end;
+		margin-top: 1em;
 		padding: 0.7em 1em;
 		color: #ffffff;
 		font-weight: 700;

@@ -319,6 +319,7 @@ a {
 }
 .settings__name-change .form-row .settings__name-input {
   width: 100%;
+  max-width: 400px;
   margin-top: 0.2em;
   padding: 3px;
   font-size: 1.4rem;
@@ -326,6 +327,7 @@ a {
   border: 1px solid black;
 }
 .settings__name-change .form-row .new-name-input-error {
+  display: none;
   color: #003060;
   font-size: 1.2rem;
 }
@@ -334,8 +336,32 @@ a {
   font-size: 1.8rem;
   color: #055c9d;
 }
+.settings__avatar-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  width: 70px;
+  height: 80px;
+}
+.settings__avatar-item label img {
+  width: 50px;
+  height: 50px;
+}
+.settings__avatar-item--checked {
+  border: 1px solid #0e86d4;
+  border-radius: 5px;
+  background-color: rgba(104, 187, 227, 0.3);
+}
+.settings__avatar-list {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+}
 .settings__btn {
   align-self: flex-end;
+  margin-top: 1em;
   padding: 0.7em 1em;
   color: #ffffff;
   font-weight: 700;
