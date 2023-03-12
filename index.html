@@ -80,11 +80,45 @@
                 </div>
         </main>
         <div class="settings">
-                <div class="settings__title">
-                        <h2>User settings</h2>
+                <h2 class="settings__title">User settings</h2>
+                <hr>
+                <div class="settings__name">
+                        <h3 class="settings__name-title">Change your name</h3>
+                        <div class="settings__name-current">Current name: <span class="user-name">John</span></div>
+                        <form action="" class="settings__name-change">
+                                <div class="form-row">
+                                        <label for="change-name">New name:</label>
+                                        <input class="settings__name-new-name" id="change-name" type="text">
+                                        <p class="input-error new-name-input-error">The name must have a min. 3
+                                                characters</p>
+                                </div>
+                        </form>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ullam labore possimus odio culpa fugit
-                        dicta nesciunt consequuntur quidem voluptas.</p>
+                <hr>
+                <div class="settings__avatar">
+                        <h3 class="settings__avatar-title">Change your avatar</h3>
+                        <form action="" class="settings__avatar-list">
+                                <div class="settings__avatar-item">
+                                        <label for="avatar1">
+                                                <img src="" alt="yellow avatar">
+                                        </label>
+                                        <input type="radio" name="avatars-list" id="avatar1">
+                                </div>
+                                <div class="settings__avatar-item">
+                                        <label for="avatar1">
+                                                <img src="" alt="yellow avatar">
+                                        </label>
+                                        <input type="radio" name="avatars-list" id="avatar1">
+                                </div>
+                                <div class="settings__avatar-item">
+                                        <label for="avatar1">
+                                                <img src="" alt="yellow avatar">
+                                        </label>
+                                        <input type="radio" name="avatars-list" id="avatar1">
+                                </div>
+                        </form>
+                        <button class="settings__btn">Save</button>
+                </div>
         </div>
 
         <!-- JS -->

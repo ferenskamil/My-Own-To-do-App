@@ -134,15 +134,12 @@
 	height: 300px;
 	padding: 1em;
 	margin-top: 60px;
-	// background-color: royalblue;
 
 	&__title {
 		display: flex;
 		align-items: center;
 		padding-bottom: 0.5em;
-		// height: 60px;
 		width: 100%;
-		border-bottom: 1px solid $main-blue;
 
 		h2 {
 			font-size: 2rem;
