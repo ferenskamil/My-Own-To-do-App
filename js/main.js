@@ -248,7 +248,7 @@ const keyShortcuts = (e) => {
 
 const displaySettings = () => {
 	app.style.display = 'none';
-	settings.style.display = 'block';
+	settings.style.display = 'flex';
 };
 
 const displayToDoApp = () => {

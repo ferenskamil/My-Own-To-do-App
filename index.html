@@ -87,8 +87,11 @@
                         <div class="settings__name-current">Current name: <span class="user-name">John</span></div>
                         <form action="" class="settings__name-change">
                                 <div class="form-row">
-                                        <label for="change-name">New name:</label>
-                                        <input class="settings__name-new-name" id="change-name" type="text">
+                                        <label for="change-name">
+                                                <p>New name:</p>
+                                                <p class="label-description">(min. 3 characters)</p>
+                                        </label>
+                                        <input class="settings__name-input" id="change-name" type="text">
                                         <p class="input-error new-name-input-error">The name must have a min. 3
                                                 characters</p>
                                 </div>
@@ -117,8 +120,8 @@
                                         <input type="radio" name="avatars-list" id="avatar1">
                                 </div>
                         </form>
-                        <button class="settings__btn">Save</button>
                 </div>
+                <button class="settings__btn">Save</button>
         </div>
 
         <!-- JS -->
