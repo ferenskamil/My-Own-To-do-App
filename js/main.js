@@ -1,6 +1,7 @@
 const nav = document.querySelector('.nav');
 const navUserNameSpan = document.querySelector('.nav__greeting-person');
 const navAvatar = document.querySelector('.nav__avatar');
+const navAvatarImg = navAvatar.firstElementChild;
 const navMenu = document.querySelector('.nav__menu');
 const navMenuList = document.querySelector('.nav__menu-settings');
 const navMenuItems = document.querySelectorAll('.nav__menu-settings-item');
@@ -30,6 +31,23 @@ const avatars = document.querySelectorAll('.settings__avatar-item');
 const avatarsForm = document.querySelector('.settings__avatar-list');
 const settingsSaveBtn = document.querySelector('.settings__btn');
 
+let userSettings = {
+	userName: '',
+	avatarSrc: '',
+};
+
+const downloadUserSettingsFromLocalStorage = () => {
+	let parsedArr = JSON.parse(localStorage.getItem('userSettingsLocalCopy'));
+
+	if (parsedArr !== null) {
+		userSettings = parsedArr;
+		navAvatarImg.setAttribute('src', userSettings.avatarSrc);
+		navUserNameSpan.textContent = userSettings.userName;
+	}
+};
+
+downloadUserSettingsFromLocalStorage();
+console.log(userSettings);
 class Task {
 	constructor(textValue) {
 		this.id = Date.now();
@@ -49,8 +67,10 @@ const downloadTasksFromLocalStorage = () => {
 
 const updateLocalStorage = () => {
 	let tasksStr = JSON.stringify(taskArr);
-
 	localStorage.setItem('TasksLocalCopy', tasksStr);
+
+	let settingsStr = JSON.stringify(userSettings);
+	localStorage.setItem('userSettingsLocalCopy', settingsStr);
 };
 
 const slideNavMenu = () => {
@@ -264,7 +284,6 @@ const displayToDoApp = () => {
 	settings.style.display = 'none';
 };
 
-
 const updateUserNameInNav = () => {
 	const newName = changeNameInput.value;
 
@@ -272,11 +291,11 @@ const updateUserNameInNav = () => {
 		changeNameValidateInfo.style.display = 'block';
 	} else {
 		changeNameValidateInfo.style.display = 'none';
+		userSettings.userName = newName;
 		currentNameSpan.textContent = newName;
 		navUserNameSpan.textContent = newName;
 	}
 };
-
 
 const markAvatarAsChecked = () => {
 	[...avatarsForm].forEach((input) => {
@@ -294,12 +313,12 @@ const updateUserAvatar = () => {
 	[...avatarsForm].forEach((input) => {
 		const avatarItem = input.parentNode;
 		const checkedAvatarImg = input.previousElementSibling.lastElementChild;
-		const navAvatarImg = navAvatar.firstElementChild;
 
 		if (avatarItem.classList.contains('settings__avatar-item--checked')) {
 			const avatarFilePath = checkedAvatarImg.getAttribute('src');
 
 			navAvatarImg.setAttribute('src', avatarFilePath);
+			userSettings.avatarSrc = avatarFilePath;
 		}
 	});
 };
@@ -328,3 +347,4 @@ sidebarTitle.addEventListener('click', displayToDoApp);
 avatarsForm.addEventListener('click', markAvatarAsChecked);
 settingsSaveBtn.addEventListener('click', updateUserNameInNav);
 settingsSaveBtn.addEventListener('click', updateUserAvatar);
+settingsSaveBtn.addEventListener('click', updateLocalStorage);
