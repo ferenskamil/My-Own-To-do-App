@@ -22,8 +22,10 @@ const tasksItems = document.getElementsByClassName('app__tasks-item');
 let taskArr = [];
 
 const settings = document.querySelector('.settings');
+const settingsSaveBtn = document.querySelector('.settings__btn');
 const avatars = document.querySelectorAll('.settings__avatar-item');
 const avatarsForm = document.querySelector('.settings__avatar-list');
+
 class Task {
 	constructor(textValue) {
 		this.id = Date.now();
@@ -270,8 +272,23 @@ const markAvatarAsChecked = () => {
 	});
 };
 
+const updateUserAvatar = () => {
+	[...avatarsForm].forEach((input) => {
+		const avatarItem = input.parentNode;
+		const checkedAvatarImg = input.previousElementSibling.lastElementChild;
+		const navAvatarImg = navAvatar.firstElementChild;
+
+		if (avatarItem.classList.contains('settings__avatar-item--checked')) {
+			const avatarFilePath = checkedAvatarImg.getAttribute('src');
+
+			navAvatarImg.setAttribute('src', avatarFilePath);
+		}
+	});
+};
+
 downloadTasksFromLocalStorage();
 updateNoneTasksInfo();
+markAvatarAsChecked();
 navAvatar.addEventListener('click', slideNavMenu);
 sidebar.addEventListener('mousemove', openSideBar);
 sidebar.addEventListener('mouseleave', hideSideBar);
@@ -291,3 +308,4 @@ navMenuItems.forEach((item) => {
 sidebarToDoAppItem.addEventListener('click', displayToDoApp);
 sidebarTitle.addEventListener('click', displayToDoApp);
 avatarsForm.addEventListener('click', markAvatarAsChecked);
+settingsSaveBtn.addEventListener('click', updateUserAvatar);
