@@ -1,4 +1,5 @@
 const nav = document.querySelector('.nav');
+const navUserNameSpan = document.querySelector('.nav__greeting-person');
 const navAvatar = document.querySelector('.nav__avatar');
 const navMenu = document.querySelector('.nav__menu');
 const navMenuList = document.querySelector('.nav__menu-settings');
@@ -22,10 +23,26 @@ const tasksItems = document.getElementsByClassName('app__tasks-item');
 let taskArr = [];
 
 const settings = document.querySelector('.settings');
-const settingsSaveBtn = document.querySelector('.settings__btn');
+const currentNameSpan = document.querySelector('.user-name');
+const changeNameInput = document.querySelector('.settings__name-input');
+const changeNameValidateInfo = document.querySelector('.new-name-input-error');
 const avatars = document.querySelectorAll('.settings__avatar-item');
 const avatarsForm = document.querySelector('.settings__avatar-list');
+const settingsSaveBtn = document.querySelector('.settings__btn');
 
+const updateUserNameInNav = () => {
+	const newName = changeNameInput.value;
+
+	if (newName.length <= 3) {
+		changeNameValidateInfo.style.display = 'block';
+	} else {
+		changeNameValidateInfo.style.display = 'none';
+		currentNameSpan.textContent = newName;
+		navUserNameSpan.textContent = newName;
+	}
+};
+
+//============================
 class Task {
 	constructor(textValue) {
 		this.id = Date.now();
@@ -309,3 +326,4 @@ sidebarToDoAppItem.addEventListener('click', displayToDoApp);
 sidebarTitle.addEventListener('click', displayToDoApp);
 avatarsForm.addEventListener('click', markAvatarAsChecked);
 settingsSaveBtn.addEventListener('click', updateUserAvatar);
+settingsSaveBtn.addEventListener('click', updateUserNameInNav);
