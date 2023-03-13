@@ -2,7 +2,8 @@
 
 .settings {
 	// dispalay will be change to 'flex' through JS
-	display: none;
+	// display: none;
+	display: flex;
 	flex-direction: column;
 	position: relative;
 	width: 100%;
@@ -79,8 +80,10 @@
 			padding: 10px;
 			width: 70px;
 			height: 80px;
+			transition: border 0.3s, background-color 0.3s;
 
 			label {
+				cursor: pointer;
 				img {
 					width: 50px;
 					height: 50px;

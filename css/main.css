@@ -171,6 +171,7 @@ a {
 }
 
 .app {
+  display: none;
   margin-top: 60px;
   padding: 1em;
   background-color: #fff;
@@ -282,7 +283,7 @@ a {
 }
 
 .settings {
-  display: none;
+  display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
@@ -344,6 +345,10 @@ a {
   padding: 10px;
   width: 70px;
   height: 80px;
+  transition: border 0.3s, background-color 0.3s;
+}
+.settings__avatar-item label {
+  cursor: pointer;
 }
 .settings__avatar-item label img {
   width: 50px;

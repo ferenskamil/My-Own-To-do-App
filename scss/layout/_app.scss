@@ -1,6 +1,7 @@
 @use '../utilities/' as *;
 
 .app {
+	display: none;
 	margin-top: 60px;
 	padding: 1em;
 	background-color: $white;
@@ -126,5 +127,3 @@
 		}
 	}
 }
-
-
