@@ -57,7 +57,7 @@ class Task {
 }
 
 const downloadTasksFromLocalStorage = () => {
-	let parsedArr = JSON.parse(localStorage.getItem('TasksLocalCopy'));
+	let parsedArr = JSON.parse(localStorage.getItem('tasksLocalCopy'));
 
 	if (parsedArr !== null) {
 		parsedArr.forEach((obj) => createNewTaskItem(obj));
@@ -67,7 +67,7 @@ const downloadTasksFromLocalStorage = () => {
 
 const updateLocalStorage = () => {
 	let tasksStr = JSON.stringify(taskArr);
-	localStorage.setItem('TasksLocalCopy', tasksStr);
+	localStorage.setItem('tasksLocalCopy', tasksStr);
 
 	let settingsStr = JSON.stringify(userSettings);
 	localStorage.setItem('userSettingsLocalCopy', settingsStr);
