@@ -30,19 +30,6 @@ const avatars = document.querySelectorAll('.settings__avatar-item');
 const avatarsForm = document.querySelector('.settings__avatar-list');
 const settingsSaveBtn = document.querySelector('.settings__btn');
 
-const updateUserNameInNav = () => {
-	const newName = changeNameInput.value;
-
-	if (newName.length <= 3) {
-		changeNameValidateInfo.style.display = 'block';
-	} else {
-		changeNameValidateInfo.style.display = 'none';
-		currentNameSpan.textContent = newName;
-		navUserNameSpan.textContent = newName;
-	}
-};
-
-//============================
 class Task {
 	constructor(textValue) {
 		this.id = Date.now();
@@ -289,6 +276,18 @@ const markAvatarAsChecked = () => {
 	});
 };
 
+const updateUserNameInNav = () => {
+	const newName = changeNameInput.value;
+
+	if (newName.length <= 3) {
+		changeNameValidateInfo.style.display = 'block';
+	} else {
+		changeNameValidateInfo.style.display = 'none';
+		currentNameSpan.textContent = newName;
+		navUserNameSpan.textContent = newName;
+	}
+};
+
 const updateUserAvatar = () => {
 	[...avatarsForm].forEach((input) => {
 		const avatarItem = input.parentNode;
@@ -325,5 +324,5 @@ navMenuItems.forEach((item) => {
 sidebarToDoAppItem.addEventListener('click', displayToDoApp);
 sidebarTitle.addEventListener('click', displayToDoApp);
 avatarsForm.addEventListener('click', markAvatarAsChecked);
-settingsSaveBtn.addEventListener('click', updateUserAvatar);
 settingsSaveBtn.addEventListener('click', updateUserNameInNav);
+settingsSaveBtn.addEventListener('click', updateUserAvatar);
