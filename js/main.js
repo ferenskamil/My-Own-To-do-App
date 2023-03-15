@@ -1,4 +1,5 @@
-const nav = document.querySelector('.nav');
+import './sidebar.js';
+// const nav = document.querySelector('.nav');
 const navUserNameSpan = document.querySelector('.nav__greeting-person');
 const navAvatar = document.querySelector('.nav__avatar');
 const navAvatarImg = navAvatar.firstElementChild;
@@ -7,12 +8,13 @@ const navMenuList = document.querySelector('.nav__menu-settings');
 const navMenuItems = document.querySelectorAll('.nav__menu-settings-item');
 
 const app = document.querySelector('.app');
-const burgerBtn = document.querySelector('.nav__mobile-burger-btn');
-const sidebar = document.querySelector('.sidebar');
+// const burgerBtn = document.querySelector('.nav__mobile-burger-btn');
+// const sidebar = document.querySelector('.sidebar');
 const sidebarTitle = document.querySelector('.sidebar__title');
-const sidebarDescriptions = document.querySelectorAll('.sidebar__description');
+// const sidebarDescriptions = document.querySelectorAll('.sidebar__description');
 const sidebarItems = document.querySelectorAll('.sidebar__option');
 const sidebarToDoAppItem = sidebarItems[0];
+const sidebarSettingsItem = sidebarItems[1];
 
 const addInput = document.querySelector('.app__add-input');
 const addBtn = document.querySelector('.app__add-btn');
@@ -47,7 +49,6 @@ const downloadUserSettingsFromLocalStorage = () => {
 };
 
 downloadUserSettingsFromLocalStorage();
-console.log(userSettings);
 class Task {
 	constructor(textValue) {
 		this.id = Date.now();
@@ -78,30 +79,30 @@ const slideNavMenu = () => {
 	navMenuList.classList.toggle('nav__menu-settings--slided');
 };
 
-const openSideBar = () => {
-	sidebar.classList.add('sidebar--open');
-	nav.classList.add('nav--wide');
-	app.classList.add('app--wide');
-	settings.classList.add('settings--wide');
-	sidebarDescriptions.forEach((el) => {
-		el.classList.add('sidebar__description--visible');
-	});
-};
+// const openSideBar = () => {
+// 	sidebar.classList.add('sidebar--open');
+// 	nav.classList.add('nav--wide');
+// 	app.classList.add('app--wide');
+// 	settings.classList.add('settings--wide');
+// 	sidebarDescriptions.forEach((el) => {
+// 		el.classList.add('sidebar__description--visible');
+// 	});
+// };
 
-const hideSideBar = () => {
-	sidebar.classList.remove('sidebar--open');
-	nav.classList.remove('nav--wide');
-	app.classList.remove('app--wide');
-	settings.classList.remove('settings--wide');
-	sidebarDescriptions.forEach((el) => {
-		el.classList.remove('sidebar__description--visible');
-	});
-};
+// const hideSideBar = () => {
+// 	sidebar.classList.remove('sidebar--open');
+// 	nav.classList.remove('nav--wide');
+// 	app.classList.remove('app--wide');
+// 	settings.classList.remove('settings--wide');
+// 	sidebarDescriptions.forEach((el) => {
+// 		el.classList.remove('sidebar__description--visible');
+// 	});
+// };
 
-const toggleSidebar = () => {
-	sidebar.classList.toggle('sidebar--open');
-	nav.classList.toggle('nav--wide');
-};
+// const toggleSidebar = () => {
+// 	sidebar.classList.toggle('sidebar--open');
+// 	nav.classList.toggle('nav--wide');
+// };
 
 const updateNoneTasksInfo = () => {
 	if (tasksItems.length === 0) {
@@ -327,12 +328,12 @@ downloadTasksFromLocalStorage();
 updateNoneTasksInfo();
 markAvatarAsChecked();
 navAvatar.addEventListener('click', slideNavMenu);
-sidebar.addEventListener('mousemove', openSideBar);
-sidebar.addEventListener('mouseleave', hideSideBar);
-burgerBtn.addEventListener('click', toggleSidebar);
-sidebarItems.forEach((item) => {
-	item.addEventListener('click', hideSideBar);
-});
+// sidebar.addEventListener('mousemove', openSideBar);
+// sidebar.addEventListener('mouseleave', hideSideBar);
+// burgerBtn.addEventListener('click', toggleSidebar);
+// sidebarItems.forEach((item) => {
+// 	item.addEventListener('click', hideSideBar);
+// });
 addBtn.addEventListener('click', addNewTask);
 document.addEventListener('keydown', (e) => keyShortcuts(e));
 document.addEventListener('click', (e) => closestTaskSettings(e));
@@ -343,6 +344,7 @@ navMenuItems.forEach((item) => {
 	item.addEventListener('click', slideNavMenu);
 });
 sidebarToDoAppItem.addEventListener('click', displayToDoApp);
+sidebarSettingsItem.addEventListener('click', displaySettings);
 sidebarTitle.addEventListener('click', displayToDoApp);
 avatarsForm.addEventListener('click', markAvatarAsChecked);
 settingsSaveBtn.addEventListener('click', updateUserNameInNav);
