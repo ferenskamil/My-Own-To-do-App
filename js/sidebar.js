@@ -4,6 +4,9 @@ const sidebar = document.querySelector('.sidebar');
 const nav = document.querySelector('.nav');
 const sidebarDescriptions = document.querySelectorAll('.sidebar__description');
 const sidebarItems = document.querySelectorAll('.sidebar__option');
+const sidebarTitle = document.querySelector('.sidebar__title');
+const sidebarToDoAppItem = sidebarItems[0];
+const sidebarSettingsItem = sidebarItems[1];
 const settings = document.querySelector('.settings');
 
 const openSideBar = () => {
@@ -31,9 +34,22 @@ const toggleSidebar = () => {
 	nav.classList.toggle('nav--wide');
 };
 
+const displaySettings = () => {
+	app.style.display = 'none';
+	settings.style.display = 'flex';
+};
+
+const displayToDoApp = () => {
+	app.style.display = 'block';
+	settings.style.display = 'none';
+};
+
 sidebar.addEventListener('mousemove', openSideBar);
 sidebar.addEventListener('mouseleave', hideSideBar);
 burgerBtn.addEventListener('click', toggleSidebar);
 sidebarItems.forEach((item) => {
 	item.addEventListener('click', hideSideBar);
 });
+sidebarToDoAppItem.addEventListener('click', displayToDoApp);
+sidebarSettingsItem.addEventListener('click', displaySettings);
+sidebarTitle.addEventListener('click', displayToDoApp);
