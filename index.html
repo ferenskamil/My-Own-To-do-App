@@ -3,64 +3,65 @@
 
 <head>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Google Fonts - MONTSERRAT-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
+<!-- Google Fonts - MONTSERRAT-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
 
-        <!-- FontAwesome -->
-        <script src="https://kit.fontawesome.com/63681c7143.js" crossorigin="anonymous"></script>
+<!-- FontAwesome -->
+<script src="https://kit.fontawesome.com/63681c7143.js" crossorigin="anonymous"></script>
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="./css/main.css">
-
+<!-- CSS -->
+<link rel="stylesheet" href="./dist/css/main.min.css">
         <!-- title -->
         <title>My Own ToDoApp</title>
 </head>
 
 <body>
         <div class="sidebar">
-                <a href="#">
-                        <div class="sidebar__title">
-                                <div class="sidebar__title-logo"><i class="fa-regular fa-circle-check"></i></div>
-                                <div class="sidebar__title-name sidebar__description">ToDoApp
-                                </div>
+        <a href="./index.html">
+                <div class="sidebar__title">
+                        <div class="sidebar__title-logo"><i class="fa-regular fa-circle-check"></i></div>
+                        <div class="sidebar__title-name sidebar__description">ToDoApp
                         </div>
-                </a>
-                <div class="sidebar__settings">
-                        <ul>
-                                <a href="#">
-                                        <li class="sidebar__option">
-                                                <div class="sidebar__option-icon"><i class="fa-solid fa-file"></i>
-                                                </div>
-                                                <div class="sidebar__option-name sidebar__description">ToDoApp</div>
-                                        </li>
-                                </a>
-                                <a href="#">
-                                        <li class="sidebar__option">
-                                                <div class="sidebar__option-icon"><i class="fa-solid fa-gear"></i></div>
-                                                <div class="sidebar__option-name sidebar__description">Settings</div>
-                                        </li>
-                                </a>
-                        </ul>
                 </div>
+        </a>
+        <div class="sidebar__settings">
+                <ul>
+                        <a href="./index.html">
+                                <li class="sidebar__option">
+                                        <div class="sidebar__option-icon"><i class="fa-solid fa-file"></i>
+                                        </div>
+                                        <div class="sidebar__option-name sidebar__description">ToDoApp</div>
+                                </li>
+                        </a>
+                        <a href="./settings.html">
+                                <li class="sidebar__option">
+                                        <div class="sidebar__option-icon"><i class="fa-solid fa-gear"></i></div>
+                                        <div class="sidebar__option-name sidebar__description">Settings</div>
+                                </li>
+                        </a>
+                </ul>
         </div>
+</div>
         <nav class="nav">
-                <div class="nav__burger-btn">
-                        <i class="fa-solid fa-bars nav__mobile-burger-btn"></i>
-                </div>
-                <p class="nav__greeting">Hello, <span class="nav__greeting-person">nice guy</span>!</p>
-                <button class="nav__avatar"><img src="./img/avatars/avatar7.png" alt="avatar"><i
-                                class="fa-solid fa-caret-down"></i></button>
-                <div class="nav__menu">
-                        <ul class="nav__menu-settings">
+        <div class="nav__burger-btn">
+                <i class="fa-solid fa-bars nav__mobile-burger-btn"></i>
+        </div>
+        <p class="nav__greeting">Hello, <span class="nav__greeting-person">nice guy</span>!</p>
+        <button class="nav__avatar"><img src="./dist/img/avatars/avatar7.png" alt="avatar"><i
+                        class="fa-solid fa-caret-down"></i></button>
+        <div class="nav__menu">
+                <ul class="nav__menu-settings">
+                        <a href="./settings.html">
                                 <li class="nav__menu-settings-item">Ustawienia konta</li>
-                        </ul>
-                </div>
-        </nav>
+                        </a>
+                </ul>
+        </div>
+</nav>
         <main class="app">
                 <div class="app__add">
                         <input class="app__add-input" type="text" placeholder="What will you do today?">
@@ -72,92 +73,9 @@
                         </ul>
                 </div>
         </main>
-        <div class="settings">
-                <h2 class="settings__title">User settings</h2>
-                <hr>
-                <div class="settings__name">
-                        <h3 class="settings__name-title">Change your name</h3>
-                        <div class="settings__name-current">Current name: <span class="user-name">John</span></div>
-                        <form action="" class="settings__name-change">
-                                <div class="form-row">
-                                        <label for="change-name">
-                                                <p>New name:</p>
-                                                <p class="label-description">(min. 3 characters)</p>
-                                        </label>
-                                        <input class="settings__name-input" id="change-name" type="text">
-                                        <p class="input-error new-name-input-error">The name must have a min. 3
-                                                characters</p>
-                                </div>
-                        </form>
-                </div>
-                <hr>
-                <div class="settings__avatar">
-                        <h3 class="settings__avatar-title">Change your avatar</h3>
-                        <form action="" class="settings__avatar-list">
-                                <div class="settings__avatar-item settings__avatar-item--checked">
-                                        <label for="avatar1">
-                                                <img src="./img/avatars/avatar1.png"
-                                                        alt="black hair woman on yellow background">
-                                        </label>
-                                        <input type="radio" name="avatars-list" id="avatar1">
-                                </div>
-                                <div class="settings__avatar-item">
-                                        <label for="avatar2">
-                                                <img src="./img/avatars/avatar2.png"
-                                                        alt="brown hair woman on pink background">
-                                        </label>
-                                        <input type="radio" name="avatars-list" id="avatar2">
-                                </div>
-                                <div class="settings__avatar-item">
-                                        <label for="avatar3">
-                                                <img src="./img/avatars/avatar3.png"
-                                                        alt="long brown hair woman on blue background">
-                                        </label>
-                                        <input type="radio" name="avatars-list" id="avatar3">
-                                </div>
-                                <div class="settings__avatar-item">
-                                        <label for="avatar4">
-                                                <img src="./img/avatars/avatar4.png"
-                                                        alt="long black hair woman on red background">
-                                        </label>
-                                        <input type="radio" name="avatars-list" id="avatar4">
-                                </div>
-                                <div class="settings__avatar-item">
-                                        <label for="avatar5">
-                                                <img src="./img/avatars/avatar5.png"
-                                                        alt="brown hair man with beard on red background">
-                                        </label>
-                                        <input type="radio" name="avatars-list" id="avatar5">
-                                </div>
-                                <div class="settings__avatar-item">
-                                        <label for="avatar6">
-                                                <img src="./img/avatars/avatar6.png"
-                                                        alt="black hair man in brown jacket on yellow background">
-                                        </label>
-                                        <input type="radio" name="avatars-list" id="avatar6">
-                                </div>
-                                <div class="settings__avatar-item">
-                                        <label for="avatar7">
-                                                <img src="./img/avatars/avatar7.png"
-                                                        alt="black hair man on green background">
-                                        </label>
-                                        <input type="radio" name="avatars-list" id="avatar7">
-                                </div>
-                                <div class="settings__avatar-item">
-                                        <label for="avatar8">
-                                                <img src="./img/avatars/avatar8.png"
-                                                        alt="black hair man in suit on blue background">
-                                        </label>
-                                        <input type="radio" name="avatars-list" id="avatar8">
-                                </div>
-
-                        </form>
-                </div>
-                <button class="settings__btn">Save</button>
-        </div>
 
         <!-- JS -->
-        <script type="module" src="./js/main.js"></script>
+        <script type="module" src="./dist/js/index.min.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+        <!-- @include './head' -->
+        <!-- title -->
+        <title>My Own ToDoApp</title>
+</head>
+
+<body>
+        <!-- @include './sidebar' -->
+        <!-- @include './nav' -->
+        <main class="app">
+                <div class="app__add">
+                        <input class="app__add-input" type="text" placeholder="What will you do today?">
+                        <button class="app__add-btn">ADD</button>
+                </div>
+                <div class="app__tasks-area">
+                        <p class="app__tasks-area-info">None tasks to display</p>
+                        <ul class="app__tasks-list">
+                        </ul>
+                </div>
+        </main>
+
+        <!-- JS -->
+        <script type="module" src="./dist/js/index.min.js"></script>
+</body>
+
+</html>

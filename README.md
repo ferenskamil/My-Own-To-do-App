@@ -8,6 +8,11 @@ During this project, I practiced:
 - event delegation
 - key shortcuts 
 - save data in local storage
+- ES6 modules 
+- node.js
+- npm(e.g. gulp, cssnano, uglify. kit, sourcemaps, rename, browser-sync)
+- splitting the .html file into .kit modules
+- splitting the file structure into src(source) and dist(distribution)
 
 Functionality used: 
 - drop-down, responsive sidebar
@@ -15,4 +20,6 @@ Functionality used:
 - adding tasks using button or enter key
 - editing tasks 
 - marking tasks as done
-- save current state in local storage
+- changing user avatar and user name in settings
+- saving current state in local storage
+
