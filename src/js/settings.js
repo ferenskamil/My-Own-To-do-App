@@ -1,5 +1,5 @@
-import './sidebar.min.js';
-import './nav.min.js';
+import './_sidebar.min.js';
+import './_nav.min.js';
 
 const navUserNameSpan = document.querySelector('.nav__greeting-person');
 const currentNameSpan = document.querySelector('.user-name');

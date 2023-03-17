@@ -1,4 +1,4 @@
-import Task from './classes.min.js';
+import Task from './_classes.min.js';
 
 const addInput = document.querySelector('.app__add-input');
 const addBtn = document.querySelector('.app__add-btn');

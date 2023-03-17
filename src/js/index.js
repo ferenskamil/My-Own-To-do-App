@@ -1,4 +1,4 @@
-import './sidebar.min.js';
-import './nav.min.js';
-import './toDoApp.min.js';
+import './_sidebar.min.js';
+import './_nav.min.js';
+import './_toDoApp.min.js';
 import './settings.min.js';
