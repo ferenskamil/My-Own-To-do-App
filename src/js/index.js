@@ -43,6 +43,15 @@ let userSettings = {
 	avatarSrc: '',
 };
 
+// Classes
+class Task {
+	constructor(textValue) {
+		this.id = Date.now();
+		this.text = textValue;
+		this.isDone = false;
+	}
+}
+
 // Nav functions
 const slideNavMenu = () => {
 	navMenu.classList.toggle('nav__menu--visible');
