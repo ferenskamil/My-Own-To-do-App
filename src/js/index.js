@@ -43,7 +43,7 @@ let userSettings = {
 	avatarSrc: '',
 };
 
-// Classes
+// classes
 class Task {
 	constructor(textValue) {
 		this.id = Date.now();
