@@ -86,13 +86,13 @@ const toggleSidebar = () => {
 // 	}
 // };
 
-// const updateLocalStorage = () => {
-// 	let tasksStr = JSON.stringify(taskArr);
-// 	localStorage.setItem('tasksLocalCopy', tasksStr);
+const updateLocalStorage = () => {
+	let tasksStr = JSON.stringify(taskArr);
+	localStorage.setItem('tasksLocalCopy', tasksStr);
 
-// 	let settingsStr = JSON.stringify(userSettings);
-// 	localStorage.setItem('userSettingsLocalCopy', settingsStr);
-// };
+	let settingsStr = JSON.stringify(userSettings);
+	localStorage.setItem('userSettingsLocalCopy', settingsStr);
+};
 
 // const updateNoneTasksInfo = () => {
 // 	if (tasksItems.length === 0) {
