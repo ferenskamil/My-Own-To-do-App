@@ -87,8 +87,8 @@ const toggleSidebar = () => {
 // };
 
 const updateLocalStorage = () => {
-	let tasksStr = JSON.stringify(taskArr);
-	localStorage.setItem('tasksLocalCopy', tasksStr);
+	// let tasksStr = JSON.stringify(taskArr);
+	// localStorage.setItem('tasksLocalCopy', tasksStr);
 
 	let settingsStr = JSON.stringify(userSettings);
 	localStorage.setItem('userSettingsLocalCopy', settingsStr);
@@ -305,6 +305,8 @@ const markAvatarAsChecked = () => {
 			avatarItem.classList.remove('settings__avatar-item--checked');
 		}
 	});
+
+	updateLocalStorage();
 };
 
 const updateUserAvatar = () => {
@@ -319,6 +321,8 @@ const updateUserAvatar = () => {
 			userSettings.avatarSrc = avatarFilePath;
 		}
 	});
+
+	updateLocalStorage();
 };
 
 // Nav events
@@ -345,4 +349,4 @@ markAvatarAsChecked();
 avatarsForm.addEventListener('click', markAvatarAsChecked);
 settingsSaveBtn.addEventListener('click', updateUserNameInNav);
 settingsSaveBtn.addEventListener('click', updateUserAvatar);
-settingsSaveBtn.addEventListener('click', updateLocalStorage);
+// settingsSaveBtn.addEventListener('click', updateLocalStorage);
