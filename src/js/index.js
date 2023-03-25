@@ -2,7 +2,7 @@
 // import * as nav from './_nav.min.js';
 // import * as toDoApp from './_toDoApp.min.js';
 // import * as settings from './settings.min.js';
-import Task from './_classes.min.js';
+// import Task from './_classes.min.js';
 
 // Nav variables
 const navMenu = document.querySelector('.nav__menu');
