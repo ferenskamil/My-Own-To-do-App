@@ -1,6 +1,8 @@
 # My Own To do App
 This is a to do application that I wrote independently. I got the design idea from courses, canva and pinterest. I got the idea for the functionality from courses and my ideas.
 
+You can use this app on this site:
+https://ferenskamil.github.io/My-Own-To-do-App/
 
 During this project, I practiced:
 - building the site on my own without the help of tutorials
