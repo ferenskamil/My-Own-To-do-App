@@ -8,7 +8,7 @@ During this project, I practiced:
 - event delegation
 - key shortcuts 
 - save data in local storage
-- ES6 modules 
+- divide js file into smaller parts
 - node.js
 - npm(e.g. gulp, cssnano, uglify. kit, sourcemaps, rename, browser-sync)
 - splitting the .html file into .kit modules
