@@ -19,6 +19,7 @@ const downloadUserSettingsFromLocalStorage = () => {
 
 	if (parsedArr !== null) {
 		userSettings = parsedArr;
+		currentNameSpan.textContent = parsedArr.userName;
 	}
 };
 
