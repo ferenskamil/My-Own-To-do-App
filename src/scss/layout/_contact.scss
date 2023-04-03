@@ -1,4 +1,20 @@
 @use '../utilities/' as *;
 
 .contact {
+	padding: 0 1em;
+	font-size: 1.4rem;
+
+	&__title {
+		display: flex;
+		align-items: center;
+		padding-bottom: 1px;
+		width: 100%;
+		font-size: 2rem;
+	}
+
+	// In the future all hr's will be connected and relocated to another file
+	hr {
+		color: $main-blue;
+		margin: 0.5em 0;
+	}
 }
