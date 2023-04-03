@@ -15,26 +15,26 @@
                 <hr>
                 <form class="contact__form" action="" method="">
                         <div class="contact__form-box">
-                                <label for="">Your name</label>
-                                <input type="text">
+                                <label for="contact-name">Your name</label>
+                                <input type="text" id="contact-name">
                         </div>
                         <div class="contact__form-box">
-                                <label for="">Your email</label>
-                                <input type="email">
+                                <label for="contact-email">Your email</label>
+                                <input type="email" id="contact-email">
                         </div>
                         <div class="contact__form-box">
-                                <label for="">Topic</label>
-                                <select name="" id="">
-                                        <option value="" disabled>--Please choose a topic--</option>
-                                        <option value="topic2">topic2</option>
-                                        <option value="topic3">topic3</option>
-                                        <option value="topic4">topic4</option>
-                                        <option value="other">other topic</option>
+                                <label for="contact-issue">Topic</label>
+                                <select name="" id="contact-issue">
+                                        <option value="0" selected disabled>--Please choose a topic--</option>
+                                        <option value="issue1">I have an easy problem with my computer</option>
+                                        <option value="issue2">I think my problem will be difficult for you</option>
+                                        <option value="issue3">I haven't problem, I want to rate you!</option>
+                                        <option value="other">I have other issue</option>
                                 </select>
                         </div>
                         <div class="contact__form-box">
-                                <label for="">Your message</label>
-                                <textarea name="" id=""></textarea>
+                                <label for="contact-msg">Your message</label>
+                                <textarea name="" id="contact-msg"></textarea>
                         </div>
                         <button class="contact__form-btn" type="submit">Send</button>
 

@@ -12,6 +12,55 @@
 		font-size: 2rem;
 	}
 
+	&__form {
+		display: flex;
+		flex-direction: column;
+		&-box {
+			display: flex;
+			flex-direction: column;
+			label {
+				font-size: 1.8rem;
+				color: $main-blue;
+			}
+
+			input,
+			select,
+			textarea {
+				width: 100%;
+				max-width: 600px;
+				margin-top: 0.2em;
+				margin-bottom: 0.5rem;
+				padding: 3px;
+				font-size: 1.4rem;
+				border-radius: 5px;
+				border: 1px solid black;
+			}
+
+			textarea {
+				resize: vertical;
+				min-height: 120px;
+			}
+		}
+
+		&-btn {
+			align-self: flex-end;
+			margin-top: 1em;
+			padding: 0.7em 1em;
+			color: #ffffff;
+			font-weight: 700;
+			text-transform: uppercase;
+			background-color: $blue;
+			border-radius: 8px;
+			border: 1px solid $main-blue;
+			transition: background-color 0.5s;
+			cursor: pointer;
+
+			&:hover {
+				background-color: $main-blue;
+			}
+		}
+	}
+
 	// In the future all hr's will be connected and relocated to another file
 	hr {
 		color: $main-blue;
