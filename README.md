@@ -25,3 +25,4 @@ Functionality used:
 - changing user avatar and user name in settings
 - saving current state in local storage
 
+And...As you see...I am learning git ;) 
